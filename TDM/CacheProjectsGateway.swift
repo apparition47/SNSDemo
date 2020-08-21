@@ -18,16 +18,28 @@ class CacheFollowersGateway: FollowersGateway {
     
     // MARK: - FollowersGateway
 
+    func register(parameters: LoginParameters, completionHandler: @escaping LoginEntityGatewayCompletionHandler) {
+        apiFollowersGateway.login(parameters: parameters) { result in
+            self.handleLoginApiResult(result, parameters: parameters, completionHandler: completionHandler)
+        }
+    }
+    
     func login(parameters: LoginParameters, completionHandler: @escaping LoginEntityGatewayCompletionHandler) {
         apiFollowersGateway.login(parameters: parameters) { result in
             self.handleLoginApiResult(result, parameters: parameters, completionHandler: completionHandler)
         }
     }
     
-    func fetchFollowers(parameters: FetchFollowersParameters, completionHandler: @escaping FetchFollowersEntityGatewayCompletionHandler) {
+    func logout(completionHandler: @escaping LogoutEntityGatewayCompletionHandler) {
+        apiFollowersGateway.logout { result in
+            self.handleLogoutApiResult(result, completionHandler: completionHandler)
+        }
+    }
+
+    func fetchTimelines(completion: @escaping FetchTimelinesEntityGatewayCompletionHandler) {
         // TODO write to CoreData
-        apiFollowersGateway.fetchFollowers(parameters: parameters) { result in
-            self.handleGetFollowersApiResult(result, parameters: parameters, completionHandler: completionHandler)
+        apiFollowersGateway.fetchTimelines { [weak self] result in
+            self?.handleGetFollowersApiResult(result, completionHandler: completion)
         }
     }
     
@@ -45,10 +57,16 @@ class CacheFollowersGateway: FollowersGateway {
         }
     }
     
+    func deleteDM(parameters: DeleteDMParameters, completionHandler: @escaping DeleteDMEntityGatewayCompletionHandler) {
+        apiFollowersGateway.deleteDM(parameters: parameters) { result in
+            self.handleDeleteDMApiResult(result, completionHandler: completionHandler)
+        }
+    }
+    
     
     // MARK: - Private
 
-    fileprivate func handleLoginApiResult(_ result: Result<Void>, parameters: LoginParameters, completionHandler: LoginEntityGatewayCompletionHandler) {
+    fileprivate func handleLoginApiResult(_ result: Result<User>, parameters: LoginParameters, completionHandler: LoginEntityGatewayCompletionHandler) {
         switch result {
         case .success(_):
             completionHandler(result)
@@ -57,7 +75,16 @@ class CacheFollowersGateway: FollowersGateway {
         }
     }
     
-    fileprivate func handleGetFollowersApiResult(_ result: Result<[Follower]>, parameters: FetchFollowersParameters, completionHandler: FetchFollowersEntityGatewayCompletionHandler) {
+    fileprivate func handleLogoutApiResult(_ result: Result<Void>, completionHandler: LogoutEntityGatewayCompletionHandler) {
+        switch result {
+        case .success(_):
+            completionHandler(result)
+        case .failure(_):
+            completionHandler(result)
+        }
+    }
+    
+    fileprivate func handleGetFollowersApiResult(_ result: Result<[User]>, completionHandler: FetchTimelinesEntityGatewayCompletionHandler) {
         switch result {
         case .success(_):
             completionHandler(result)
@@ -84,4 +111,12 @@ class CacheFollowersGateway: FollowersGateway {
         }
     }
     
+    fileprivate func handleDeleteDMApiResult(_ result: Result<Void>, completionHandler: DeleteDMEntityGatewayCompletionHandler) {
+        switch result {
+        case .success(_):
+            completionHandler(result)
+        case .failure(_):
+            completionHandler(result)
+        }
+    }
 }

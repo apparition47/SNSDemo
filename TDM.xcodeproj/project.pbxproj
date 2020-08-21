@@ -15,10 +15,6 @@
 		2FC6C4981E60B5C4005539F5 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6C4961E60B5C4005539F5 /* ViewRouter.swift */; };
 		2FC6C4A31E60B65E005539F5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6C4A21E60B65E005539F5 /* Result.swift */; };
 		4B509031D815FFB9FDAF8378 /* libPods-TDM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3D004CA87F1C2743CCE7E0 /* libPods-TDM.a */; };
-		73185C6B1FD6F48B00D233CB /* TwitterShareExtensionUIResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 73185C671FD6F48A00D233CB /* TwitterShareExtensionUIResources.bundle */; };
-		73185C6C1FD6F48B00D233CB /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73185C681FD6F48A00D233CB /* TwitterKit.framework */; };
-		73185C6D1FD6F48B00D233CB /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73185C691FD6F48B00D233CB /* TwitterCore.framework */; };
-		73185C6E1FD6F48B00D233CB /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 73185C6A1FD6F48B00D233CB /* TwitterKitResources.bundle */; };
 		73185C701FD6F50E00D233CB /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73185C6F1FD6F50E00D233CB /* SafariServices.framework */; };
 		7333A3EC1F5AD45F00996C84 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7333A3EB1F5AD45F00996C84 /* ApiRequest.swift */; };
 		734AF5E61FAEEC4F00C7099B /* FollowersConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AF5E51FAEEC4F00C7099B /* FollowersConfigurator.swift */; };
@@ -28,7 +24,6 @@
 		738A0F4C1FD80D8F00B79813 /* PostDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A0F4B1FD80D8F00B79813 /* PostDM.swift */; };
 		738A0F4E1FD81B7300B79813 /* FetchFollowers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A0F4D1FD81B7300B79813 /* FetchFollowers.swift */; };
 		738A0F501FD81BF300B79813 /* GetApiFollowersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A0F4F1FD81BF300B79813 /* GetApiFollowersRequest.swift */; };
-		738A0F521FD81EC300B79813 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A0F511FD81EC300B79813 /* HTTPMethod.swift */; };
 		738A0F541FD84C3300B79813 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A0F531FD84C3300B79813 /* Constants.swift */; };
 		738EDE201FD977200023059E /* FollowerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738EDE1F1FD977200023059E /* FollowerTableViewCell.swift */; };
 		738EDE221FD97CE60023059E /* FollowerDMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738EDE211FD97CE60023059E /* FollowerDMViewController.swift */; };
@@ -36,7 +31,6 @@
 		738EDE2A1FD97D530023059E /* BubbleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738EDE251FD97D530023059E /* BubbleTableViewCell.swift */; };
 		738EDE2B1FD97D530023059E /* FollowerDMConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738EDE261FD97D530023059E /* FollowerDMConfigurator.swift */; };
 		738EDE2C1FD97D530023059E /* FollowerDMPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738EDE271FD97D530023059E /* FollowerDMPresenter.swift */; };
-		738F744A1F5A936900C2D586 /* UIImageView+CacheFromUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738F74491F5A936900C2D586 /* UIImageView+CacheFromUrl.swift */; };
 		739827EF1F56EC7A00730BE6 /* FollowersGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739827EE1F56EC7A00730BE6 /* FollowersGateway.swift */; };
 		739827F11F56EDDD00730BE6 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739827F01F56EDDD00730BE6 /* Follower.swift */; };
 		739827F31F56FF2B00730BE6 /* ApiFollowersGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739827F21F56FF2B00730BE6 /* ApiFollowersGateway.swift */; };
@@ -45,6 +39,11 @@
 		739D8A251FAD8A3B000B279B /* FollowersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739D8A241FAD8A3B000B279B /* FollowersPresenter.swift */; };
 		73AFF1441FD9811300F75D38 /* FetchDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AFF1431FD9811300F75D38 /* FetchDM.swift */; };
 		73AFF1461FD9888F00F75D38 /* DM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AFF1451FD9888F00F75D38 /* DM.swift */; };
+		73D6429324EFA213005E1602 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73D6429224EFA213005E1602 /* GoogleService-Info.plist */; };
+		73D6429624EFAAC0005E1602 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6429524EFAAC0005E1602 /* AccountViewController.swift */; };
+		73D6429824EFB29F005E1602 /* DeleteDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6429724EFB29F005E1602 /* DeleteDM.swift */; };
+		73D6429A24EFBF0C005E1602 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6429924EFBF0C005E1602 /* User.swift */; };
+		73D6429C24F0029D005E1602 /* DeletePostApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6429B24F0029D005E1602 /* DeletePostApiRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +60,7 @@
 		130F8BF7ED68E22502D7F0C3 /* Pods-TDM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDM.release.xcconfig"; path = "Target Support Files/Pods-TDM/Pods-TDM.release.xcconfig"; sourceTree = "<group>"; };
 		2F3D6B7F1E61A37400CF7881 /* UIViewController-Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController-Alert.swift"; sourceTree = "<group>"; };
 		2F3D6B851E61D0AC00CF7881 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
-		2FC6C46B1E60B542005539F5 /* TDM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TDM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FC6C46B1E60B542005539F5 /* SNS Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SNS Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FC6C46E1E60B542005539F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FC6C4731E60B542005539F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2FC6C4781E60B542005539F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,10 +68,6 @@
 		2FC6C4961E60B5C4005539F5 /* ViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		2FC6C4A21E60B65E005539F5 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		73185C631FD6F3F200D233CB /* TDM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TDM-Bridging-Header.h"; sourceTree = "<group>"; };
-		73185C671FD6F48A00D233CB /* TwitterShareExtensionUIResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterShareExtensionUIResources.bundle; sourceTree = "<group>"; };
-		73185C681FD6F48A00D233CB /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
-		73185C691FD6F48B00D233CB /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
-		73185C6A1FD6F48B00D233CB /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
 		73185C6F1FD6F50E00D233CB /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		7333A3EB1F5AD45F00996C84 /* ApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		734AF5E51FAEEC4F00C7099B /* FollowersConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersConfigurator.swift; sourceTree = "<group>"; };
@@ -84,7 +79,6 @@
 		738A0F4B1FD80D8F00B79813 /* PostDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDM.swift; sourceTree = "<group>"; };
 		738A0F4D1FD81B7300B79813 /* FetchFollowers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchFollowers.swift; sourceTree = "<group>"; };
 		738A0F4F1FD81BF300B79813 /* GetApiFollowersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetApiFollowersRequest.swift; sourceTree = "<group>"; };
-		738A0F511FD81EC300B79813 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		738A0F531FD84C3300B79813 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		738EDE1F1FD977200023059E /* FollowerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerTableViewCell.swift; sourceTree = "<group>"; };
 		738EDE211FD97CE60023059E /* FollowerDMViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerDMViewController.swift; sourceTree = "<group>"; };
@@ -92,7 +86,6 @@
 		738EDE251FD97D530023059E /* BubbleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleTableViewCell.swift; sourceTree = "<group>"; };
 		738EDE261FD97D530023059E /* FollowerDMConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerDMConfigurator.swift; sourceTree = "<group>"; };
 		738EDE271FD97D530023059E /* FollowerDMPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerDMPresenter.swift; sourceTree = "<group>"; };
-		738F74491F5A936900C2D586 /* UIImageView+CacheFromUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+CacheFromUrl.swift"; sourceTree = "<group>"; };
 		739827EE1F56EC7A00730BE6 /* FollowersGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersGateway.swift; sourceTree = "<group>"; };
 		739827F01F56EDDD00730BE6 /* Follower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		739827F21F56FF2B00730BE6 /* ApiFollowersGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiFollowersGateway.swift; sourceTree = "<group>"; };
@@ -101,6 +94,11 @@
 		739D8A241FAD8A3B000B279B /* FollowersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersPresenter.swift; sourceTree = "<group>"; };
 		73AFF1431FD9811300F75D38 /* FetchDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDM.swift; sourceTree = "<group>"; };
 		73AFF1451FD9888F00F75D38 /* DM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DM.swift; sourceTree = "<group>"; };
+		73D6429224EFA213005E1602 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		73D6429524EFAAC0005E1602 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		73D6429724EFB29F005E1602 /* DeleteDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteDM.swift; sourceTree = "<group>"; };
+		73D6429924EFBF0C005E1602 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		73D6429B24F0029D005E1602 /* DeletePostApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePostApiRequest.swift; sourceTree = "<group>"; };
 		DB3D004CA87F1C2743CCE7E0 /* libPods-TDM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TDM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D3A62ADC751F0119D27C7F /* Pods-TDM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDM.debug.xcconfig"; path = "Target Support Files/Pods-TDM/Pods-TDM.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,8 +109,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				73185C701FD6F50E00D233CB /* SafariServices.framework in Frameworks */,
-				73185C6C1FD6F48B00D233CB /* TwitterKit.framework in Frameworks */,
-				73185C6D1FD6F48B00D233CB /* TwitterCore.framework in Frameworks */,
 				4B509031D815FFB9FDAF8378 /* libPods-TDM.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,7 +129,6 @@
 				E2D3A62ADC751F0119D27C7F /* Pods-TDM.debug.xcconfig */,
 				130F8BF7ED68E22502D7F0C3 /* Pods-TDM.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -141,7 +136,6 @@
 			isa = PBXGroup;
 			children = (
 				2FC6C46D1E60B542005539F5 /* TDM */,
-				73185C661FD6F47B00D233CB /* Vendor */,
 				73880E091F8670FA005E24FB /* Tests */,
 				2FC6C46C1E60B542005539F5 /* Products */,
 				CB107EF4A48C0E27C185BAE2 /* Frameworks */,
@@ -152,7 +146,7 @@
 		2FC6C46C1E60B542005539F5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2FC6C46B1E60B542005539F5 /* TDM.app */,
+				2FC6C46B1E60B542005539F5 /* SNS Demo.app */,
 				73880E081F8670FA005E24FB /* Tests.xctest */,
 			);
 			name = Products;
@@ -170,6 +164,7 @@
 				2FC6C4781E60B542005539F5 /* Assets.xcassets */,
 				2FC6C47D1E60B542005539F5 /* Info.plist */,
 				73185C631FD6F3F200D233CB /* TDM-Bridging-Header.h */,
+				73D6429224EFA213005E1602 /* GoogleService-Info.plist */,
 			);
 			path = TDM;
 			sourceTree = "<group>";
@@ -197,6 +192,7 @@
 		2FC6C4931E60B597005539F5 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				73D6429424EFAAB0005E1602 /* Account */,
 				734DB4B41F51BF7300905F64 /* Followers */,
 				734DB4B51F51BFD800905F64 /* Follower DM */,
 			);
@@ -208,8 +204,6 @@
 			children = (
 				2FC6C4961E60B5C4005539F5 /* ViewRouter.swift */,
 				2F3D6B7F1E61A37400CF7881 /* UIViewController-Alert.swift */,
-				738F74491F5A936900C2D586 /* UIImageView+CacheFromUrl.swift */,
-				738A0F511FD81EC300B79813 /* HTTPMethod.swift */,
 				738A0F531FD84C3300B79813 /* Constants.swift */,
 			);
 			name = Other;
@@ -250,6 +244,7 @@
 				738A0F4D1FD81B7300B79813 /* FetchFollowers.swift */,
 				738A0F4B1FD80D8F00B79813 /* PostDM.swift */,
 				73AFF1431FD9811300F75D38 /* FetchDM.swift */,
+				73D6429724EFB29F005E1602 /* DeleteDM.swift */,
 			);
 			name = UseCases;
 			sourceTree = "<group>";
@@ -257,8 +252,9 @@
 		2FC6C4A61E60B685005539F5 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				739827F01F56EDDD00730BE6 /* Follower.swift */,
 				73AFF1451FD9888F00F75D38 /* DM.swift */,
+				739827F01F56EDDD00730BE6 /* Follower.swift */,
+				73D6429924EFBF0C005E1602 /* User.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -282,19 +278,9 @@
 			isa = PBXGroup;
 			children = (
 				738A0F4F1FD81BF300B79813 /* GetApiFollowersRequest.swift */,
+				73D6429B24F0029D005E1602 /* DeletePostApiRequest.swift */,
 			);
 			name = Requests;
-			sourceTree = "<group>";
-		};
-		73185C661FD6F47B00D233CB /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				73185C691FD6F48B00D233CB /* TwitterCore.framework */,
-				73185C681FD6F48A00D233CB /* TwitterKit.framework */,
-				73185C6A1FD6F48B00D233CB /* TwitterKitResources.bundle */,
-				73185C671FD6F48A00D233CB /* TwitterShareExtensionUIResources.bundle */,
-			);
-			path = Vendor;
 			sourceTree = "<group>";
 		};
 		734DB4B41F51BF7300905F64 /* Followers */ = {
@@ -338,6 +324,14 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		73D6429424EFAAB0005E1602 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				73D6429524EFAAC0005E1602 /* AccountViewController.swift */,
+			);
+			name = Account;
+			sourceTree = "<group>";
+		};
 		CB107EF4A48C0E27C185BAE2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,7 +360,7 @@
 			);
 			name = TDM;
 			productName = Library;
-			productReference = 2FC6C46B1E60B542005539F5 /* TDM.app */;
+			productReference = 2FC6C46B1E60B542005539F5 /* SNS Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
 		73880E071F8670FA005E24FB /* Tests */ = {
@@ -394,7 +388,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Aaron Lee";
 				TargetAttributes = {
 					2FC6C46A1E60B542005539F5 = {
@@ -414,6 +408,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -433,10 +428,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73185C6E1FD6F48B00D233CB /* TwitterKitResources.bundle in Resources */,
 				2FC6C4791E60B542005539F5 /* Assets.xcassets in Resources */,
 				2FC6C4741E60B542005539F5 /* Main.storyboard in Resources */,
-				73185C6B1FD6F48B00D233CB /* TwitterShareExtensionUIResources.bundle in Resources */,
+				73D6429324EFA213005E1602 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,11 +494,13 @@
 				739D8A211FAD87E3000B279B /* FollowersViewController.swift in Sources */,
 				738A0F501FD81BF300B79813 /* GetApiFollowersRequest.swift in Sources */,
 				739D8A231FAD8998000B279B /* FollowersViewRouter.swift in Sources */,
+				73D6429C24F0029D005E1602 /* DeletePostApiRequest.swift in Sources */,
+				73D6429824EFB29F005E1602 /* DeleteDM.swift in Sources */,
+				73D6429A24EFBF0C005E1602 /* User.swift in Sources */,
 				73AFF1441FD9811300F75D38 /* FetchDM.swift in Sources */,
 				2FC6C46F1E60B542005539F5 /* AppDelegate.swift in Sources */,
 				738A0F4E1FD81B7300B79813 /* FetchFollowers.swift in Sources */,
 				2F3D6B861E61D0AC00CF7881 /* ApiClient.swift in Sources */,
-				738A0F521FD81EC300B79813 /* HTTPMethod.swift in Sources */,
 				739827F31F56FF2B00730BE6 /* ApiFollowersGateway.swift in Sources */,
 				7333A3EC1F5AD45F00996C84 /* ApiRequest.swift in Sources */,
 				2FC6C4A31E60B65E005539F5 /* Result.swift in Sources */,
@@ -522,7 +518,7 @@
 				738EDE221FD97CE60023059E /* FollowerDMViewController.swift in Sources */,
 				738EDE2B1FD97D530023059E /* FollowerDMConfigurator.swift in Sources */,
 				738EDE2A1FD97D530023059E /* BubbleTableViewCell.swift in Sources */,
-				738F744A1F5A936900C2D586 /* UIImageView+CacheFromUrl.swift in Sources */,
+				73D6429624EFAAC0005E1602 /* AccountViewController.swift in Sources */,
 				734BA0FF1F5C03A00006B3D4 /* CacheProjectsGateway.swift in Sources */,
 				734AF5E61FAEEC4F00C7099B /* FollowersConfigurator.swift in Sources */,
 				738EDE2C1FD97D530023059E /* FollowerDMPresenter.swift in Sources */,
@@ -563,6 +559,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -572,6 +569,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -579,6 +577,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -619,6 +618,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -628,6 +628,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -635,6 +636,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -676,8 +678,8 @@
 				);
 				INFOPLIST_FILE = "$(PROJECT_DIR)/$(PROJECT_NAME)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.onefatgiraffe.TDM;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.onefatgiraffe.snsdemo;
+				PRODUCT_NAME = "SNS Demo";
 				SWIFT_OBJC_BRIDGING_HEADER = "TDM/TDM-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -696,8 +698,8 @@
 				);
 				INFOPLIST_FILE = "$(PROJECT_DIR)/$(PROJECT_NAME)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.onefatgiraffe.TDM;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.onefatgiraffe.snsdemo;
+				PRODUCT_NAME = "SNS Demo";
 				SWIFT_OBJC_BRIDGING_HEADER = "TDM/TDM-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 			};

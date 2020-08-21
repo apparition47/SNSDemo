@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DM {
+struct DM: Codable {
     let message: String
     let isFromSelf: Bool
 }

@@ -21,7 +21,7 @@ protocol FollowerCellView {
 protocol FollowersPresenter {
     var numberOfFollowers: Int { get }
     var router: FollowersViewRouter { get }
-    func viewDidLoad()
+//    func viewDidLoad()
     func configure(cell: FollowerTableViewCell, forRow row: Int)
     func didSelect(row: Int)
 }
@@ -52,9 +52,9 @@ class FollowersPresenterImplementation: FollowersPresenter {
     
     // MARK: - FollowersPresenter
     
-    func viewDidLoad() {
-        doLoginFlow()
-    }
+//    func viewDidLoad() {
+//        doLoginFlow()
+//    }
     
     func configure(cell: FollowerTableViewCell, forRow row: Int) {
         let follower = followers[row]
@@ -71,29 +71,29 @@ class FollowersPresenterImplementation: FollowersPresenter {
     
     // MARK: - Private
     
-    private func doLoginFlow() {
-        let params: LoginParameters = LoginParameters()
-
-        loginUseCase.login(parameters: params) { result in
-            switch result {
-            case .success(_):
-                self.handleLoginCompleted()
-            case let .failure(error):
-                self.handleFollowersError(error)
-            }
-        }
-    }
+//    private func doLoginFlow() {
+//        let params: LoginParameters = LoginParameters()
+//
+//        loginUseCase.login(parameters: params) { result in
+//            switch result {
+//            case .success(_):
+//                self.handleLoginCompleted()
+//            case let .failure(error):
+//                self.handleFollowersError(error)
+//            }
+//        }
+//    }
 
     fileprivate func handleLoginCompleted() {
-        let params: FetchFollowersParameters = FetchFollowersParameters()
-        fetchFollowersUseCase.fetchFollowers(parameters: params) { result in
-            switch result {
-            case let .success(followers):
-                self.handleFollowersReceived(followers)
-            case let .failure(error):
-                self.handleFollowersError(error)
-            }
-        }
+//        let params = FetchFollowersParameters()
+//        fetchFollowersUseCase.fetchFollowers(parameters: params) { result in
+//            switch result {
+//            case let .success(followers):
+//                self.handleFollowersReceived(followers)
+//            case let .failure(error):
+//                self.handleFollowersError(error)
+//            }
+//        }
     }
     
     fileprivate func handleFollowersReceived(_ followers: [Follower]) {

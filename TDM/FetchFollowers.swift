@@ -8,15 +8,15 @@
 
 import Foundation
 
-typealias FetchFollowersUseCaseCompletionHandler = (_ followers: Result<[Follower]>) -> Void
+typealias FetchFollowersUseCaseCompletionHandler = (_ followers: Result<[User]>) -> Void
 
-struct FetchFollowersParameters {
-    //    let query: String?
-    //    let page: Int?
-}
+//struct FetchFollowersParameters {
+//    //    let query: String?
+//    //    let page: Int?
+//}
 
 protocol FetchFollowersUseCase {
-    func fetchFollowers(parameters: FetchFollowersParameters, completionHandler: @escaping FetchFollowersUseCaseCompletionHandler)
+    func fetchFollowers(completionHandler: @escaping FetchFollowersUseCaseCompletionHandler)
 }
 
 class FetchFollowersUseCaseImplementation: FetchFollowersUseCase {
@@ -29,8 +29,8 @@ class FetchFollowersUseCaseImplementation: FetchFollowersUseCase {
     
     // MARK: - FetchFollowersUseCase
     
-    func fetchFollowers(parameters: FetchFollowersParameters, completionHandler: @escaping FetchFollowersUseCaseCompletionHandler) {
-        self.followersGateway.fetchFollowers(parameters: parameters) { result in
+    func fetchFollowers(completionHandler: @escaping FetchFollowersUseCaseCompletionHandler) {
+        followersGateway.fetchTimelines { result in
             completionHandler(result)
         }
     }

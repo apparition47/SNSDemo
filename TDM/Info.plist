@@ -19,21 +19,23 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>twitterkit-XZl5iTbW9lB3COnP12k4hmV9o</string>
+				<string>com.googleusercontent.apps.592512770646-10lj6fhpu8o75jtf0l4shknomt6b50tb</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
-	<key>LSRequiresIPhoneOS</key>
-	<true/>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
-	    <string>twitter</string>
-	    <string>twitterauth</string>
+		<string>twitter</string>
+		<string>twitterauth</string>
 	</array>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>Main</string>
 	<key>UIMainStoryboardFile</key>

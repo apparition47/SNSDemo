@@ -8,11 +8,11 @@
 
 import Foundation
 
-typealias LoginUseCaseCompletionHandler = (_ session: Result<Void>) -> Void
+typealias LoginUseCaseCompletionHandler = (_ session: Result<User>) -> Void
 
 struct LoginParameters {
-//    let query: String?
-//    let page: Int?
+    let email: String
+    let password: String
 }
 
 protocol LoginUseCase {
@@ -21,8 +21,6 @@ protocol LoginUseCase {
 
 class LoginUseCaseImplementation: LoginUseCase {
 
-    
-    
     let followersGateway: FollowersGateway
     
     init(followersGateway: FollowersGateway) {

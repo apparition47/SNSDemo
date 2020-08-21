@@ -8,33 +8,53 @@
 
 import Foundation
 
+enum DocumentQuery {
+    case timelines
+    case timeline(email: String)
+    case post(email: String, uid: String)
+}
+
+enum HTTPMethod {
+    case get, post, delete
+}
+
+extension DocumentQuery {
+    var description: String {
+        switch self {
+        case .timelines: return "timelines"
+        case .timeline(let email): return "timelines/\(email)"
+        case .post(let email, let uid): return "timelines/\(email)/\(uid)"
+        }
+    }
+}
+
 protocol ApiRequest {
-    var baseUrl: String { get }
-    var path: String { get }
-    var method: HTTPMethod { get }
+//    var baseUrl: String { get }
+    var query: DocumentQuery { get }
     var parameters: [String: Any]? { get }
-    var headers: [String: String]? { get }
-    associatedtype ResponseType: Codable
-    static func decode(from data: Data) -> Result<ResponseType>
+//    var headers: [String: String]? { get }
+    var orderBy: String? { get }
+    var orderDesc: Bool { get }
+    var limit: Int? { get }
+    associatedtype ResponseType//: Codable
+//    static func decode(from data: Data) -> Result<ResponseType>
 }
 
 extension ApiRequest {
-    var baseUrl: String {
-        let apiVersion = "1.1"
-        return "https://api.twitter.com/\(apiVersion)"
-    }
+//    var baseUrl: String {
+//        let apiVersion = "1.1"
+//        return "https://api.twitter.com/\(apiVersion)"
+//    }
     
-    var path: String {
-        return "/"
-    }
-    
-    var method: HTTPMethod {
-        return HTTPMethod.get
-    }
+    var parameters: [String: Any]? { nil }
+    var method: HTTPMethod { .get }
+    var orderBy: String? { nil }
+    var orderDesc: Bool { true }
+    var limit: Int? { nil }
 
-    var headers: [String: String]? {
-        return nil
-    }
+//    var headers: [String: String]? {
+//        return nil
+//    }
 
 }
 

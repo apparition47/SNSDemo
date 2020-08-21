@@ -16,7 +16,7 @@ final class FollowersViewController: UITableViewController {
         super.viewDidLoad()
         
         configurator.configure(followersViewController: self)
-        presenter.viewDidLoad()
+//        presenter.viewDidLoad()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
