@@ -8,7 +8,6 @@
 
 import Foundation
 import Firebase
-import FirebaseFirestoreSwift
 
 protocol ApiClient {
     var currentUser: User? { get }
@@ -138,15 +137,3 @@ class ApiClientImplementation: ApiClient {
 
 }
 
-extension QuerySnapshot {
-    public func data<T: Decodable>(as type: T.Type,
-                                   decoder: Firestore.Decoder? = nil) throws -> T? {
-        let dic: [[String : Any]]? = documents.compactMap { doc in
-            var res = doc.data()
-            res.removeValue(forKey: "timestamp")
-            return res
-        }
-        let jsonData = try? JSONSerialization.data(withJSONObject: dic as Any, options: [])
-        return try! JSONDecoder().decode(T.self, from: jsonData!)
-    }
-}

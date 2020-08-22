@@ -14,9 +14,11 @@ struct PostDMApiRequest: ApiRequest {
     var query: DocumentQuery {
         .post(email: email, uid: uid)
     }
+    
     var method: HTTPMethod {
         .put
     }
+    
     var parameters: [String : Any]? {
         ["uid": uid, "message": message, "from": email]
     }

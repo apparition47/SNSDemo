@@ -12,12 +12,13 @@ struct UpdateTimelineApiRequest: ApiRequest {
     typealias ResponseType = NullCodable
     
     var query: DocumentQuery {
-//        .post(email: email, uid: uid)
         .timeline(email: email)
     }
+    
     var method: HTTPMethod {
         .put
     }
+    
     var parameters: [String : Any]? {
         ["email": email]
     }

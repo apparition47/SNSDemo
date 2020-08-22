@@ -14,9 +14,11 @@ struct FetchTimelineApiRequest: ApiRequest {
     var query: DocumentQuery {
         .timelinePosts(email: email)
     }
+    
     var method: HTTPMethod {
         .get
     }
+    
     var orderBy: String? {
         "timestamp"
     }

@@ -10,11 +10,6 @@ import Foundation
 
 typealias FetchFollowersUseCaseCompletionHandler = (_ followers: Result<[User]>) -> Void
 
-//struct FetchFollowersParameters {
-//    //    let query: String?
-//    //    let page: Int?
-//}
-
 protocol FetchFollowersUseCase {
     func fetchFollowers(completionHandler: @escaping FetchFollowersUseCaseCompletionHandler)
 }

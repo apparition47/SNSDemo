@@ -26,6 +26,7 @@ class FollowerDMConfiguratorImplementation: FollowerDMConfigurator {
         
         let followersGateway = CacheFollowersGateway(apiFollowersGateway: apiFollowersGateway)
         
+        let loginUseCase = LoginUseCaseImplementation(followersGateway: followersGateway)
         let postDMUseCase = PostDMUseCaseImplementation(followersGateway: followersGateway)
         let fetchDMUseCase = FetchDMUseCaseImplementation(followersGateway: followersGateway)
         let deleteDMUseCase = DeleteDMUseCaseImplementation(followersGateway: followersGateway)
@@ -35,6 +36,7 @@ class FollowerDMConfiguratorImplementation: FollowerDMConfigurator {
         let presenter = FollowerDMPresenterImplementation(
             view: followerDMViewController,
             follower: user,
+            loginUseCase: loginUseCase,
             postDMUseCase: postDMUseCase,
             fetchDMUseCase: fetchDMUseCase,
             deleteDMUseCase: deleteDMUseCase,

@@ -61,7 +61,7 @@ extension FollowersViewController : FollowersView {
         
     }
     
-    func displayFollowersRetrievalError(title: String, message: String) {
+    func displayError(title: String, message: String) {
         presentAlert(withTitle: title, message: message)
     }
     

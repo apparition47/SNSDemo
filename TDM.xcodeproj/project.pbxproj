@@ -32,7 +32,6 @@
 		738EDE2B1FD97D530023059E /* FollowerDMConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738EDE261FD97D530023059E /* FollowerDMConfigurator.swift */; };
 		738EDE2C1FD97D530023059E /* FollowerDMPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738EDE271FD97D530023059E /* FollowerDMPresenter.swift */; };
 		739827EF1F56EC7A00730BE6 /* FollowersGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739827EE1F56EC7A00730BE6 /* FollowersGateway.swift */; };
-		739827F11F56EDDD00730BE6 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739827F01F56EDDD00730BE6 /* Follower.swift */; };
 		739827F31F56FF2B00730BE6 /* ApiFollowersGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739827F21F56FF2B00730BE6 /* ApiFollowersGateway.swift */; };
 		739D8A211FAD87E3000B279B /* FollowersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739D8A201FAD87E3000B279B /* FollowersViewController.swift */; };
 		739D8A231FAD8998000B279B /* FollowersViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739D8A221FAD8998000B279B /* FollowersViewRouter.swift */; };
@@ -44,12 +43,12 @@
 		73D0007224F124DA009C747E /* NullCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D0007124F124DA009C747E /* NullCodable.swift */; };
 		73D0007424F1447A009C747E /* UpdateTimelineApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D0007324F1447A009C747E /* UpdateTimelineApiRequest.swift */; };
 		73D0007624F144FD009C747E /* UpdateTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D0007524F144FD009C747E /* UpdateTimeline.swift */; };
+		73D0007824F156FA009C747E /* Firestore+QuerySnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D0007724F156FA009C747E /* Firestore+QuerySnapshot.swift */; };
 		73D6429324EFA213005E1602 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73D6429224EFA213005E1602 /* GoogleService-Info.plist */; };
 		73D6429624EFAAC0005E1602 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6429524EFAAC0005E1602 /* AccountViewController.swift */; };
 		73D6429824EFB29F005E1602 /* DeleteDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6429724EFB29F005E1602 /* DeleteDM.swift */; };
 		73D6429A24EFBF0C005E1602 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6429924EFBF0C005E1602 /* User.swift */; };
 		73D6429C24F0029D005E1602 /* DeletePostApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6429B24F0029D005E1602 /* DeletePostApiRequest.swift */; };
-		73D6429E24F0110C005E1602 /* UserGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6429D24F0110C005E1602 /* UserGateway.swift */; };
 		73E235A224F0C86F00F9AC08 /* FetchTimelineApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E235A124F0C86F00F9AC08 /* FetchTimelineApiRequest.swift */; };
 		73E235A424F0C95100F9AC08 /* PostDMApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E235A324F0C95100F9AC08 /* PostDMApiRequest.swift */; };
 /* End PBXBuildFile section */
@@ -95,7 +94,6 @@
 		738EDE261FD97D530023059E /* FollowerDMConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerDMConfigurator.swift; sourceTree = "<group>"; };
 		738EDE271FD97D530023059E /* FollowerDMPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerDMPresenter.swift; sourceTree = "<group>"; };
 		739827EE1F56EC7A00730BE6 /* FollowersGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersGateway.swift; sourceTree = "<group>"; };
-		739827F01F56EDDD00730BE6 /* Follower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		739827F21F56FF2B00730BE6 /* ApiFollowersGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiFollowersGateway.swift; sourceTree = "<group>"; };
 		739D8A201FAD87E3000B279B /* FollowersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersViewController.swift; sourceTree = "<group>"; };
 		739D8A221FAD8998000B279B /* FollowersViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersViewRouter.swift; sourceTree = "<group>"; };
@@ -107,12 +105,12 @@
 		73D0007124F124DA009C747E /* NullCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullCodable.swift; sourceTree = "<group>"; };
 		73D0007324F1447A009C747E /* UpdateTimelineApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTimelineApiRequest.swift; sourceTree = "<group>"; };
 		73D0007524F144FD009C747E /* UpdateTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTimeline.swift; sourceTree = "<group>"; };
+		73D0007724F156FA009C747E /* Firestore+QuerySnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firestore+QuerySnapshot.swift"; sourceTree = "<group>"; };
 		73D6429224EFA213005E1602 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		73D6429524EFAAC0005E1602 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		73D6429724EFB29F005E1602 /* DeleteDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteDM.swift; sourceTree = "<group>"; };
 		73D6429924EFBF0C005E1602 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		73D6429B24F0029D005E1602 /* DeletePostApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePostApiRequest.swift; sourceTree = "<group>"; };
-		73D6429D24F0110C005E1602 /* UserGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGateway.swift; sourceTree = "<group>"; };
 		73E235A124F0C86F00F9AC08 /* FetchTimelineApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTimelineApiRequest.swift; sourceTree = "<group>"; };
 		73E235A324F0C95100F9AC08 /* PostDMApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDMApiRequest.swift; sourceTree = "<group>"; };
 		843BBDBFB8FDBB73B7931341 /* Pods_TDM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TDM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -218,10 +216,10 @@
 		2FC6C4941E60B59E005539F5 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				2FC6C4961E60B5C4005539F5 /* ViewRouter.swift */,
-				2F3D6B7F1E61A37400CF7881 /* UIViewController-Alert.swift */,
 				738A0F531FD84C3300B79813 /* Constants.swift */,
 				73D0007124F124DA009C747E /* NullCodable.swift */,
+				2F3D6B7F1E61A37400CF7881 /* UIViewController-Alert.swift */,
+				2FC6C4961E60B5C4005539F5 /* ViewRouter.swift */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -242,6 +240,7 @@
 				2FC6C4AF1E60B73A005539F5 /* Entities */,
 				7333A3EB1F5AD45F00996C84 /* ApiRequest.swift */,
 				2F3D6B851E61D0AC00CF7881 /* ApiClient.swift */,
+				73D0007724F156FA009C747E /* Firestore+QuerySnapshot.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -250,7 +249,6 @@
 			isa = PBXGroup;
 			children = (
 				739827EE1F56EC7A00730BE6 /* FollowersGateway.swift */,
-				73D6429D24F0110C005E1602 /* UserGateway.swift */,
 			);
 			name = Gateways;
 			sourceTree = "<group>";
@@ -272,7 +270,6 @@
 			isa = PBXGroup;
 			children = (
 				73AFF1451FD9888F00F75D38 /* DM.swift */,
-				739827F01F56EDDD00730BE6 /* Follower.swift */,
 				73D6429924EFBF0C005E1602 /* User.swift */,
 			);
 			name = Entities;
@@ -539,6 +536,7 @@
 				73D6429C24F0029D005E1602 /* DeletePostApiRequest.swift in Sources */,
 				73D0007424F1447A009C747E /* UpdateTimelineApiRequest.swift in Sources */,
 				73D6429824EFB29F005E1602 /* DeleteDM.swift in Sources */,
+				73D0007824F156FA009C747E /* Firestore+QuerySnapshot.swift in Sources */,
 				73D6429A24EFBF0C005E1602 /* User.swift in Sources */,
 				73AFF1441FD9811300F75D38 /* FetchDM.swift in Sources */,
 				2FC6C46F1E60B542005539F5 /* AppDelegate.swift in Sources */,
@@ -549,7 +547,6 @@
 				2FC6C4A31E60B65E005539F5 /* Result.swift in Sources */,
 				73D0007024F0FE09009C747E /* AccountPresenter.swift in Sources */,
 				738EDE201FD977200023059E /* FollowerTableViewCell.swift in Sources */,
-				739827F11F56EDDD00730BE6 /* Follower.swift in Sources */,
 				738A0F541FD84C3300B79813 /* Constants.swift in Sources */,
 				73AFF1461FD9888F00F75D38 /* DM.swift in Sources */,
 				738EDE291FD97D530023059E /* FollowerDMViewRouter.swift in Sources */,
@@ -566,7 +563,6 @@
 				73D0006C24F0FDF4009C747E /* AccountConfigurator.swift in Sources */,
 				73D6429624EFAAC0005E1602 /* AccountViewController.swift in Sources */,
 				734BA0FF1F5C03A00006B3D4 /* CacheProjectsGateway.swift in Sources */,
-				73D6429E24F0110C005E1602 /* UserGateway.swift in Sources */,
 				734AF5E61FAEEC4F00C7099B /* FollowersConfigurator.swift in Sources */,
 				738EDE2C1FD97D530023059E /* FollowerDMPresenter.swift in Sources */,
 				73D0007624F144FD009C747E /* UpdateTimeline.swift in Sources */,

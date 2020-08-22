@@ -37,6 +37,7 @@ class FollowerDMPresenterImplementation: FollowerDMPresenter {
     fileprivate var inputMessage = ""
     fileprivate let follower: User
 	fileprivate weak var view: FollowerDMView?
+    private let loginUseCase: LoginUseCase
 	fileprivate let postDMUseCase: PostDMUseCase
 	fileprivate let fetchDMUseCase: FetchDMUseCase
     fileprivate let deleteDMUseCase: DeleteDMUseCase
@@ -50,24 +51,20 @@ class FollowerDMPresenterImplementation: FollowerDMPresenter {
 	
 	init(view: FollowerDMView,
          follower: User,
+         loginUseCase: LoginUseCase,
 	     postDMUseCase: PostDMUseCase,
 	     fetchDMUseCase: FetchDMUseCase,
          deleteDMUseCase: DeleteDMUseCase,
 	     router: FollowerDMViewRouter) {
 		self.view = view
         self.follower = follower
+        self.loginUseCase = loginUseCase
 		self.postDMUseCase = postDMUseCase
 		self.fetchDMUseCase = fetchDMUseCase
         self.deleteDMUseCase = deleteDMUseCase
 		self.router = router
-		
-		registerForReceiveDMNotification()
 	}
-	
-	deinit {
-		NotificationCenter.default.removeObserver(self)
-	}
-	
+
 	// MARK: - FollowerDMPresenter
 	
 	func viewDidLoad() {
@@ -89,6 +86,11 @@ class FollowerDMPresenterImplementation: FollowerDMPresenter {
 	
     func postButtonPressed() {
         if inputMessage.isEmpty {
+            return
+        }
+        
+        guard loginUseCase.getMyAccount(completion: { _ in }) != nil else {
+            view?.displayDMPostError(title: "Error", message: "Please login first")
             return
         }
         
@@ -141,30 +143,7 @@ class FollowerDMPresenterImplementation: FollowerDMPresenter {
 		// Here we could check the error code and display a localized error message
 		view?.displayFollowerDMRetrievalError(title: "Error", message: error.localizedDescription)
 	}
-	
-	fileprivate func registerForReceiveDMNotification() {
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(didReceiveFetchDMNotification),
-                                               name: PostDMUseCaseNotifications.didPostDM,
-                                               object: nil)
-	}
-	
-    @objc fileprivate func didReceiveFetchDMNotification(_ notification: Notification) {
-//        if let fakeDm = notification.object as? DM {
-//            let params = FetchDMParameters(dm: [fakeDm])
-//            fetchDMUseCase.fetch(parameters: params) { result in
-//                switch result {
-//                case let .success(dms):
-//                    if let dm = dms.first {
-//                        self.handleDMPosted(dm: dm)
-//                    }
-//                case let .failure(error):
-//                    self.handleDMPostError(error)
-//                }
-//            }
-//        }
-	}
-	
+
     fileprivate func handleDMPosted(dm: DM) {
         followerDMs.append(dm)
         view?.refreshFollowerDMView()

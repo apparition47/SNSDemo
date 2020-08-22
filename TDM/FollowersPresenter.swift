@@ -10,7 +10,7 @@ import Foundation
 
 protocol FollowersView: class {
     func refreshFollowersView()
-    func displayFollowersRetrievalError(title: String, message: String)
+    func displayError(title: String, message: String)
     func updateBackground(hexColour: String)
 }
 
@@ -80,42 +80,19 @@ class FollowersPresenterImplementation: FollowersPresenter {
     func didSelectMyTimeline() {
         if let currentUser = loginUseCase.getMyAccount(completion: { _ in }) {
             router.presentDetailsView(for: currentUser)
+        } else {
+            view?.displayError(title: "Error", message: "Please login first")
         }
     }
     
     // MARK: - Private
-    
-//    private func doLoginFlow() {
-//        let params: LoginParameters = LoginParameters()
-//
-//        loginUseCase.login(parameters: params) { result in
-//            switch result {
-//            case .success(_):
-//                self.handleLoginCompleted()
-//            case let .failure(error):
-//                self.handleFollowersError(error)
-//            }
-//        }
-//    }
 
-    fileprivate func handleLoginCompleted() {
-//        let params = FetchFollowersParameters()
-//        fetchFollowersUseCase.fetchFollowers(parameters: params) { result in
-//            switch result {
-//            case let .success(followers):
-//                self.handleFollowersReceived(followers)
-//            case let .failure(error):
-//                self.handleFollowersError(error)
-//            }
-//        }
-    }
-    
     fileprivate func handleFollowersReceived(_ followers: [User]) {
         self.timelines += followers
         view?.refreshFollowersView()
     }
     
     fileprivate func handleFollowersError(_ error: Error) {
-        view?.displayFollowersRetrievalError(title: "Error", message: "error.localizedDescription")
+        view?.displayError(title: "Error", message: "Error fetching timelines")
     }
 }

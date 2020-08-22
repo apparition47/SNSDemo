@@ -13,8 +13,6 @@ class FollowerTableViewCell: UITableViewCell, FollowerCellView {
     static let reuseableId = "FollowerTableViewCell"
     
     @IBOutlet weak var screenNameLabel: UILabel!
-//    @IBOutlet weak var profileImageView: UIImageView!
-    
     
     func display(screenName: String) {
         screenNameLabel.text = screenName
