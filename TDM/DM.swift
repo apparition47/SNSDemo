@@ -9,7 +9,7 @@
 import Foundation
 
 struct DM: Codable {
-//    let uid: String
+    let uid: String
     let message: String
 //    let timestamp: Date
     let from: String
@@ -21,5 +21,5 @@ struct DM: Codable {
 extension DM: Equatable { }
 
 func == (lhs: DM, rhs: DM) -> Bool {
-    return lhs.message == rhs.message// && lhs.isFromSelf == rhs.isFromSelf
+    return lhs.uid == rhs.uid
 }

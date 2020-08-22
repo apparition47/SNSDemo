@@ -12,13 +12,12 @@ struct DeletePostApiRequest: ApiRequest {
     typealias ResponseType = NullCodable
     
     var query: DocumentQuery {
-//        .post(email: email, uid: uid)
-        .timelinePosts(email: email)
+        .post(email: email, uid: uid)
     }
     var method: HTTPMethod {
         .delete
     }
     
     let email: String
-//    let uid: String
+    let uid: String
 }

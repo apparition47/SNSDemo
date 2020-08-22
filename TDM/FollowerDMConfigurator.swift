@@ -28,14 +28,17 @@ class FollowerDMConfiguratorImplementation: FollowerDMConfigurator {
         
         let postDMUseCase = PostDMUseCaseImplementation(followersGateway: followersGateway)
         let fetchDMUseCase = FetchDMUseCaseImplementation(followersGateway: followersGateway)
+        let deleteDMUseCase = DeleteDMUseCaseImplementation(followersGateway: followersGateway)
         
         let router = FollowerDMViewRouterImplementation(followerDMViewController: followerDMViewController)
         
-        let presenter = FollowerDMPresenterImplementation(view: followerDMViewController,
-                                                          follower: user,
-                                                         postDMUseCase: postDMUseCase,
-                                                         fetchDMUseCase: fetchDMUseCase,
-                                                         router: router)
+        let presenter = FollowerDMPresenterImplementation(
+            view: followerDMViewController,
+            follower: user,
+            postDMUseCase: postDMUseCase,
+            fetchDMUseCase: fetchDMUseCase,
+            deleteDMUseCase: deleteDMUseCase,
+            router: router)
         
         followerDMViewController.presenter = presenter
     }

@@ -26,7 +26,7 @@ final class AccountViewController: UIViewController {
         super.viewDidLoad()
         
         configurator.configure(viewController: self)
-//        presenter.viewDidLoad()
+        presenter.viewDidLoad()
     }
     
     // MARK: - IBAction

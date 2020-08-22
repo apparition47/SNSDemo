@@ -97,10 +97,11 @@ class ApiClientImplementation: ApiClient {
                 }
             }
         case .put:
-            guard let parameters = request.parameters else {
+            guard var parameters = request.parameters else {
                 completion(Result.failure(NSError()))
                 return
             }
+            parameters["timestamp"] = Timestamp(date: Date())
             db.document(request.query.description).setData(parameters) { err in
                 if let err = err {
                     print("Error writing document: \(err)")

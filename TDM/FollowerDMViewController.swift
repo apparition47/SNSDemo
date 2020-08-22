@@ -63,11 +63,20 @@ final class FollowerDMViewController: UIViewController, FollowerDMView {
         // manually trigger
         presenter.textInputEditingChanged(to: "")
     }
+    
+    func removePostCell(row: Int) {
+        let indexPath = IndexPath(row: row, section: 0)
+        tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
 }
 
 // MARK: - UITableViewDelegate
 extension FollowerDMViewController: UITableViewDelegate {
-
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            presenter.deletePost(row: indexPath.row)
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource

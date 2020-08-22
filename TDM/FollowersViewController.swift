@@ -20,7 +20,7 @@ final class FollowersViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        presenter.viewDidLoad()
+        presenter.viewWillAppear()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

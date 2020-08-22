@@ -14,6 +14,7 @@ protocol FollowerDMView: class {
     func displayDMPostError(title: String, message: String)
     func updateHeaderTitle(_ title: String)
     func clearInput()
+    func removePostCell(row: Int)
 }
 
 protocol BubbleCellView {
@@ -28,6 +29,7 @@ protocol FollowerDMPresenter {
     func cellReuseIdType(forRow row: Int) -> String
     func textInputEditingChanged(to: String)
     func postButtonPressed()
+    func deletePost(row: Int)
 }
 
 class FollowerDMPresenterImplementation: FollowerDMPresenter {
@@ -37,6 +39,7 @@ class FollowerDMPresenterImplementation: FollowerDMPresenter {
 	fileprivate weak var view: FollowerDMView?
 	fileprivate let postDMUseCase: PostDMUseCase
 	fileprivate let fetchDMUseCase: FetchDMUseCase
+    fileprivate let deleteDMUseCase: DeleteDMUseCase
 	internal let router: FollowerDMViewRouter
 	
 	var followerDMs = [DM]()
@@ -49,11 +52,13 @@ class FollowerDMPresenterImplementation: FollowerDMPresenter {
          follower: User,
 	     postDMUseCase: PostDMUseCase,
 	     fetchDMUseCase: FetchDMUseCase,
+         deleteDMUseCase: DeleteDMUseCase,
 	     router: FollowerDMViewRouter) {
 		self.view = view
         self.follower = follower
 		self.postDMUseCase = postDMUseCase
 		self.fetchDMUseCase = fetchDMUseCase
+        self.deleteDMUseCase = deleteDMUseCase
 		self.router = router
 		
 		registerForReceiveDMNotification()
@@ -67,15 +72,8 @@ class FollowerDMPresenterImplementation: FollowerDMPresenter {
 	
 	func viewDidLoad() {
         view?.updateHeaderTitle(follower.email)
-        let params = FetchDMParameters(email: follower.email)
-        fetchDMUseCase.fetch(parameters: params) { [weak self] result in
-            switch result {
-            case let .success(dms):
-                dms.forEach { self?.handleDMPosted(dm: $0) }
-            
-            default: break
-            }
-        }
+        
+        refreshDMs()
 	}
 	
 	func configure(cell: BubbleCellView, forRow row: Int) {
@@ -95,13 +93,12 @@ class FollowerDMPresenterImplementation: FollowerDMPresenter {
         }
         
         let params = PostDMParameters(message: inputMessage)
-        postDMUseCase.post(parameters: params) { result in
+        postDMUseCase.post(parameters: params) { [weak self] result in
             switch result {
             case .success:
-//                self.handleDMPosted(dm: dm)
-                break
+                self?.refreshDMs()
             case let .failure(error):
-                self.handleDMPostError(error)
+                self?.handleDMPostError(error)
             }
         }
         view?.clearInput()
@@ -110,9 +107,36 @@ class FollowerDMPresenterImplementation: FollowerDMPresenter {
     func textInputEditingChanged(to text: String) {
         inputMessage = text
     }
+    
+    func deletePost(row: Int) {
+        let post = followerDMs[row]
+        
+        deleteDMUseCase.delete(parameters: DeleteDMParameters(email: post.from, uid: post.uid)) { [weak self] result in
+            switch result {
+            case .success:
+                self?.view?.removePostCell(row: row)
+            case let .failure(error):
+                self?.handleDMPostError(error)
+            }
+        }
+        followerDMs.remove(at: row)
+    }
 	
 	// MARK: - Private
 	
+    private func refreshDMs() {
+        followerDMs = []
+        let params = FetchDMParameters(email: follower.email)
+        fetchDMUseCase.fetch(parameters: params) { [weak self] result in
+            switch result {
+            case let .success(dms):
+                dms.forEach { self?.handleDMPosted(dm: $0) }
+            
+            default: break
+            }
+        }
+    }
+    
 	fileprivate func handleFollowerDMError(_ error: Error) {
 		// Here we could check the error code and display a localized error message
 		view?.displayFollowerDMRetrievalError(title: "Error", message: error.localizedDescription)

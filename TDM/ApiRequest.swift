@@ -12,7 +12,7 @@ enum DocumentQuery {
     case timelines
     case timeline(email: String)
     case timelinePosts(email: String)
-//    case post(email: String, uid: String)
+    case post(email: String, uid: String)
 }
 
 enum HTTPMethod {
@@ -25,40 +25,33 @@ extension DocumentQuery {
         case .timelines: return "timelines"
         case .timeline(let email): return "timelines/\(email)"
         case .timelinePosts(let email): return "timelines/\(email)/posts"
-//        case .post(let email): return "timelines/\(email)/posts"
+        case .post(let email, let uid):
+            return "timelines/\(email)/posts/\(uid)"
         }
+    }
+    
+    // Document references must have an even number of segments
+    var isCollection: Bool {
+        description.split(separator: "/").count % 2 == 1
     }
 }
 
 protocol ApiRequest {
-//    var baseUrl: String { get }
     var query: DocumentQuery { get }
     var parameters: [String: Any]? { get }
-//    var headers: [String: String]? { get }
     var method: HTTPMethod { get }
     var orderBy: String? { get }
     var orderDesc: Bool { get }
     var limit: Int? { get }
     associatedtype ResponseType: Codable
-//    static func decode(from data: Data) -> Result<ResponseType>
 }
 
 extension ApiRequest {
-//    var baseUrl: String {
-//        let apiVersion = "1.1"
-//        return "https://api.twitter.com/\(apiVersion)"
-//    }
-    
     var parameters: [String: Any]? { nil }
     var method: HTTPMethod { .get }
     var orderBy: String? { nil }
-    var orderDesc: Bool { true }
+    var orderDesc: Bool { false }
     var limit: Int? { nil }
-
-//    var headers: [String: String]? {
-//        return nil
-//    }
-
 }
 
 extension NSError {

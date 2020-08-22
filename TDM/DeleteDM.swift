@@ -30,6 +30,11 @@ class DeleteDMUseCaseImplementation: DeleteDMUseCase {
     // MARK: - DeleteDMUseCase
     
     func delete(parameters: DeleteDMParameters, completionHandler: @escaping DeleteDMUseCaseCompletionHandler) {
+        guard let user = self.followersGateway.getMyAccount(callback: { _ in }), user.email == parameters.email else {
+            completionHandler(.failure(NSError(domain: "", code: 999, userInfo: [NSLocalizedDescriptionKey: "Can't delete your own post"])))
+            return
+        }
+        
         self.followersGateway.deleteDM(parameters: parameters) { result in
             switch result {
             case .success():

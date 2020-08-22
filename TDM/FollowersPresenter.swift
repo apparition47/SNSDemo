@@ -21,7 +21,7 @@ protocol FollowerCellView {
 protocol FollowersPresenter {
     var numberOfFollowers: Int { get }
     var router: FollowersViewRouter { get }
-    func viewDidLoad()
+    func viewWillAppear()
     func configure(cell: FollowerTableViewCell, forRow row: Int)
     func didSelect(row: Int)
     func didSelectMyTimeline()
@@ -53,8 +53,8 @@ class FollowersPresenterImplementation: FollowersPresenter {
     
     // MARK: - FollowersPresenter
     
-    func viewDidLoad() {
-//        doLoginFlow()
+    func viewWillAppear() {
+        self.timelines = []
         fetchFollowersUseCase.fetchFollowers { [weak self] result in
             switch result {
             case let .success(followers):

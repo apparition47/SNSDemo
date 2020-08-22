@@ -16,7 +16,7 @@ protocol AccountView: class {
 
 protocol AccountPresenter {
     var numberOfFollowers: Int { get }
-//    func viewDidLoad()
+    func viewDidLoad()
     func configure(cell: FollowerTableViewCell, forRow row: Int)
     func loginPressed(email: String, password: String)
     func logoutPressed()
@@ -46,9 +46,15 @@ class AccountPresenterImplementation: AccountPresenter {
     
     // MARK: - FollowersPresenter
     
-//    func viewDidLoad() {
-//        doLoginFlow()
-//    }
+    func viewDidLoad() {
+        if let user = loginUseCase.getMyAccount(completion: { [weak self] user in
+            if let user = user {
+                self?.view?.displayLoggedIn(email: user.email)
+            }
+        }) {
+            view?.displayLoggedIn(email: user.email)
+        }
+    }
     
     func configure(cell: FollowerTableViewCell, forRow row: Int) {
         let timeline = timelines[row]
@@ -95,7 +101,7 @@ class AccountPresenterImplementation: AccountPresenter {
     
 
     // MARK: - Private
-    
+
 //    private func doLoginFlow() {
 //        let params: LoginParameters = LoginParameters()
 //
