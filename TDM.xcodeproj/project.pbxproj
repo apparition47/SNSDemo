@@ -14,7 +14,7 @@
 		2FC6C4791E60B542005539F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FC6C4781E60B542005539F5 /* Assets.xcassets */; };
 		2FC6C4981E60B5C4005539F5 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6C4961E60B5C4005539F5 /* ViewRouter.swift */; };
 		2FC6C4A31E60B65E005539F5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6C4A21E60B65E005539F5 /* Result.swift */; };
-		4B509031D815FFB9FDAF8378 /* libPods-TDM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB3D004CA87F1C2743CCE7E0 /* libPods-TDM.a */; };
+		59CA5CD36273E6AC1AA01F8F /* Pods_TDM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843BBDBFB8FDBB73B7931341 /* Pods_TDM.framework */; };
 		73185C701FD6F50E00D233CB /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73185C6F1FD6F50E00D233CB /* SafariServices.framework */; };
 		7333A3EC1F5AD45F00996C84 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7333A3EB1F5AD45F00996C84 /* ApiRequest.swift */; };
 		734AF5E61FAEEC4F00C7099B /* FollowersConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AF5E51FAEEC4F00C7099B /* FollowersConfigurator.swift */; };
@@ -39,11 +39,19 @@
 		739D8A251FAD8A3B000B279B /* FollowersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 739D8A241FAD8A3B000B279B /* FollowersPresenter.swift */; };
 		73AFF1441FD9811300F75D38 /* FetchDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AFF1431FD9811300F75D38 /* FetchDM.swift */; };
 		73AFF1461FD9888F00F75D38 /* DM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AFF1451FD9888F00F75D38 /* DM.swift */; };
+		73D0006C24F0FDF4009C747E /* AccountConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D0006B24F0FDF4009C747E /* AccountConfigurator.swift */; };
+		73D0007024F0FE09009C747E /* AccountPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D0006F24F0FE09009C747E /* AccountPresenter.swift */; };
+		73D0007224F124DA009C747E /* NullCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D0007124F124DA009C747E /* NullCodable.swift */; };
+		73D0007424F1447A009C747E /* UpdateTimelineApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D0007324F1447A009C747E /* UpdateTimelineApiRequest.swift */; };
+		73D0007624F144FD009C747E /* UpdateTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D0007524F144FD009C747E /* UpdateTimeline.swift */; };
 		73D6429324EFA213005E1602 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73D6429224EFA213005E1602 /* GoogleService-Info.plist */; };
 		73D6429624EFAAC0005E1602 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6429524EFAAC0005E1602 /* AccountViewController.swift */; };
 		73D6429824EFB29F005E1602 /* DeleteDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6429724EFB29F005E1602 /* DeleteDM.swift */; };
 		73D6429A24EFBF0C005E1602 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6429924EFBF0C005E1602 /* User.swift */; };
 		73D6429C24F0029D005E1602 /* DeletePostApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6429B24F0029D005E1602 /* DeletePostApiRequest.swift */; };
+		73D6429E24F0110C005E1602 /* UserGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D6429D24F0110C005E1602 /* UserGateway.swift */; };
+		73E235A224F0C86F00F9AC08 /* FetchTimelineApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E235A124F0C86F00F9AC08 /* FetchTimelineApiRequest.swift */; };
+		73E235A424F0C95100F9AC08 /* PostDMApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E235A324F0C95100F9AC08 /* PostDMApiRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,12 +102,20 @@
 		739D8A241FAD8A3B000B279B /* FollowersPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersPresenter.swift; sourceTree = "<group>"; };
 		73AFF1431FD9811300F75D38 /* FetchDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchDM.swift; sourceTree = "<group>"; };
 		73AFF1451FD9888F00F75D38 /* DM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DM.swift; sourceTree = "<group>"; };
+		73D0006B24F0FDF4009C747E /* AccountConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountConfigurator.swift; sourceTree = "<group>"; };
+		73D0006F24F0FE09009C747E /* AccountPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountPresenter.swift; sourceTree = "<group>"; };
+		73D0007124F124DA009C747E /* NullCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullCodable.swift; sourceTree = "<group>"; };
+		73D0007324F1447A009C747E /* UpdateTimelineApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTimelineApiRequest.swift; sourceTree = "<group>"; };
+		73D0007524F144FD009C747E /* UpdateTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTimeline.swift; sourceTree = "<group>"; };
 		73D6429224EFA213005E1602 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		73D6429524EFAAC0005E1602 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		73D6429724EFB29F005E1602 /* DeleteDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteDM.swift; sourceTree = "<group>"; };
 		73D6429924EFBF0C005E1602 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		73D6429B24F0029D005E1602 /* DeletePostApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePostApiRequest.swift; sourceTree = "<group>"; };
-		DB3D004CA87F1C2743CCE7E0 /* libPods-TDM.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TDM.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		73D6429D24F0110C005E1602 /* UserGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGateway.swift; sourceTree = "<group>"; };
+		73E235A124F0C86F00F9AC08 /* FetchTimelineApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTimelineApiRequest.swift; sourceTree = "<group>"; };
+		73E235A324F0C95100F9AC08 /* PostDMApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDMApiRequest.swift; sourceTree = "<group>"; };
+		843BBDBFB8FDBB73B7931341 /* Pods_TDM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TDM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D3A62ADC751F0119D27C7F /* Pods-TDM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDM.debug.xcconfig"; path = "Target Support Files/Pods-TDM/Pods-TDM.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,7 +125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73185C701FD6F50E00D233CB /* SafariServices.framework in Frameworks */,
-				4B509031D815FFB9FDAF8378 /* libPods-TDM.a in Frameworks */,
+				59CA5CD36273E6AC1AA01F8F /* Pods_TDM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,8 +209,8 @@
 			isa = PBXGroup;
 			children = (
 				73D6429424EFAAB0005E1602 /* Account */,
-				734DB4B41F51BF7300905F64 /* Followers */,
-				734DB4B51F51BFD800905F64 /* Follower DM */,
+				734DB4B41F51BF7300905F64 /* Timelines */,
+				734DB4B51F51BFD800905F64 /* Timeline DM */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -205,6 +221,7 @@
 				2FC6C4961E60B5C4005539F5 /* ViewRouter.swift */,
 				2F3D6B7F1E61A37400CF7881 /* UIViewController-Alert.swift */,
 				738A0F531FD84C3300B79813 /* Constants.swift */,
+				73D0007124F124DA009C747E /* NullCodable.swift */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -233,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				739827EE1F56EC7A00730BE6 /* FollowersGateway.swift */,
+				73D6429D24F0110C005E1602 /* UserGateway.swift */,
 			);
 			name = Gateways;
 			sourceTree = "<group>";
@@ -245,6 +263,7 @@
 				738A0F4B1FD80D8F00B79813 /* PostDM.swift */,
 				73AFF1431FD9811300F75D38 /* FetchDM.swift */,
 				73D6429724EFB29F005E1602 /* DeleteDM.swift */,
+				73D0007524F144FD009C747E /* UpdateTimeline.swift */,
 			);
 			name = UseCases;
 			sourceTree = "<group>";
@@ -279,11 +298,14 @@
 			children = (
 				738A0F4F1FD81BF300B79813 /* GetApiFollowersRequest.swift */,
 				73D6429B24F0029D005E1602 /* DeletePostApiRequest.swift */,
+				73E235A124F0C86F00F9AC08 /* FetchTimelineApiRequest.swift */,
+				73E235A324F0C95100F9AC08 /* PostDMApiRequest.swift */,
+				73D0007324F1447A009C747E /* UpdateTimelineApiRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
 		};
-		734DB4B41F51BF7300905F64 /* Followers */ = {
+		734DB4B41F51BF7300905F64 /* Timelines */ = {
 			isa = PBXGroup;
 			children = (
 				739D8A201FAD87E3000B279B /* FollowersViewController.swift */,
@@ -292,10 +314,10 @@
 				734AF5E51FAEEC4F00C7099B /* FollowersConfigurator.swift */,
 				738EDE1F1FD977200023059E /* FollowerTableViewCell.swift */,
 			);
-			name = Followers;
+			name = Timelines;
 			sourceTree = "<group>";
 		};
-		734DB4B51F51BFD800905F64 /* Follower DM */ = {
+		734DB4B51F51BFD800905F64 /* Timeline DM */ = {
 			isa = PBXGroup;
 			children = (
 				738EDE211FD97CE60023059E /* FollowerDMViewController.swift */,
@@ -304,7 +326,7 @@
 				738EDE261FD97D530023059E /* FollowerDMConfigurator.swift */,
 				738EDE251FD97D530023059E /* BubbleTableViewCell.swift */,
 			);
-			name = "Follower DM";
+			name = "Timeline DM";
 			sourceTree = "<group>";
 		};
 		73880E091F8670FA005E24FB /* Tests */ = {
@@ -327,6 +349,8 @@
 		73D6429424EFAAB0005E1602 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				73D0006B24F0FDF4009C747E /* AccountConfigurator.swift */,
+				73D0006F24F0FE09009C747E /* AccountPresenter.swift */,
 				73D6429524EFAAC0005E1602 /* AccountViewController.swift */,
 			);
 			name = Account;
@@ -336,7 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				73185C6F1FD6F50E00D233CB /* SafariServices.framework */,
-				DB3D004CA87F1C2743CCE7E0 /* libPods-TDM.a */,
+				843BBDBFB8FDBB73B7931341 /* Pods_TDM.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -352,7 +376,7 @@
 				2FC6C4671E60B542005539F5 /* Sources */,
 				2FC6C4681E60B542005539F5 /* Frameworks */,
 				2FC6C4691E60B542005539F5 /* Resources */,
-				8B910A34E8E7B729B9BFB498 /* [CP] Copy Pods Resources */,
+				E4A8071FA8621334C4E0B357 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -466,22 +490,38 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8B910A34E8E7B729B9BFB498 /* [CP] Copy Pods Resources */ = {
+		E4A8071FA8621334C4E0B357 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-TDM/Pods-TDM-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates-Cpp.bundle",
+				"${PODS_ROOT}/Target Support Files/Pods-TDM/Pods-TDM-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/abseil/absl.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp.bundle",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/absl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TDM/Pods-TDM-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TDM/Pods-TDM-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -491,10 +531,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73E235A224F0C86F00F9AC08 /* FetchTimelineApiRequest.swift in Sources */,
+				73D0007224F124DA009C747E /* NullCodable.swift in Sources */,
 				739D8A211FAD87E3000B279B /* FollowersViewController.swift in Sources */,
 				738A0F501FD81BF300B79813 /* GetApiFollowersRequest.swift in Sources */,
 				739D8A231FAD8998000B279B /* FollowersViewRouter.swift in Sources */,
 				73D6429C24F0029D005E1602 /* DeletePostApiRequest.swift in Sources */,
+				73D0007424F1447A009C747E /* UpdateTimelineApiRequest.swift in Sources */,
 				73D6429824EFB29F005E1602 /* DeleteDM.swift in Sources */,
 				73D6429A24EFBF0C005E1602 /* User.swift in Sources */,
 				73AFF1441FD9811300F75D38 /* FetchDM.swift in Sources */,
@@ -504,11 +547,13 @@
 				739827F31F56FF2B00730BE6 /* ApiFollowersGateway.swift in Sources */,
 				7333A3EC1F5AD45F00996C84 /* ApiRequest.swift in Sources */,
 				2FC6C4A31E60B65E005539F5 /* Result.swift in Sources */,
+				73D0007024F0FE09009C747E /* AccountPresenter.swift in Sources */,
 				738EDE201FD977200023059E /* FollowerTableViewCell.swift in Sources */,
 				739827F11F56EDDD00730BE6 /* Follower.swift in Sources */,
 				738A0F541FD84C3300B79813 /* Constants.swift in Sources */,
 				73AFF1461FD9888F00F75D38 /* DM.swift in Sources */,
 				738EDE291FD97D530023059E /* FollowerDMViewRouter.swift in Sources */,
+				73E235A424F0C95100F9AC08 /* PostDMApiRequest.swift in Sources */,
 				739D8A251FAD8A3B000B279B /* FollowersPresenter.swift in Sources */,
 				2F3D6B801E61A37400CF7881 /* UIViewController-Alert.swift in Sources */,
 				739827EF1F56EC7A00730BE6 /* FollowersGateway.swift in Sources */,
@@ -518,10 +563,13 @@
 				738EDE221FD97CE60023059E /* FollowerDMViewController.swift in Sources */,
 				738EDE2B1FD97D530023059E /* FollowerDMConfigurator.swift in Sources */,
 				738EDE2A1FD97D530023059E /* BubbleTableViewCell.swift in Sources */,
+				73D0006C24F0FDF4009C747E /* AccountConfigurator.swift in Sources */,
 				73D6429624EFAAC0005E1602 /* AccountViewController.swift in Sources */,
 				734BA0FF1F5C03A00006B3D4 /* CacheProjectsGateway.swift in Sources */,
+				73D6429E24F0110C005E1602 /* UserGateway.swift in Sources */,
 				734AF5E61FAEEC4F00C7099B /* FollowersConfigurator.swift in Sources */,
 				738EDE2C1FD97D530023059E /* FollowerDMPresenter.swift in Sources */,
+				73D0007624F144FD009C747E /* UpdateTimeline.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

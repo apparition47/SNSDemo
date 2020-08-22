@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias PostDMUseCaseCompletionHandler = (_ followers: Result<DM>) -> Void
+typealias PostDMUseCaseCompletionHandler = (_ followers: Result<Void>) -> Void
 
 // for echo simulation
 struct PostDMUseCaseNotifications {
@@ -17,6 +17,8 @@ struct PostDMUseCaseNotifications {
 
 struct PostDMParameters {
     let message: String
+    var email: String? = nil
+    let uid: String = UUID().uuidString
 }
 
 protocol PostDMUseCase {
@@ -34,16 +36,16 @@ class PostDMUseCaseImplementation: PostDMUseCase {
     // MARK: - PostDMUseCase
     
     func post(parameters: PostDMParameters, completionHandler: @escaping PostDMUseCaseCompletionHandler) {
-        self.followersGateway.postDM(parameters: parameters) { result in
+        guard let user = followersGateway.getMyAccount(callback: { user in }) else { return }
+        var params = parameters
+        params.email = user.email
+        followersGateway.postDM(parameters: params) { result in
             switch result {
             case let .success(dm):
-                // post NSNotification to simulate received message over network
-                NotificationCenter.default.post(name: PostDMUseCaseNotifications.didPostDM, object: dm)
                 completionHandler(result)
             case .failure(_):
                 completionHandler(result)
             }
         }
     }
-    
 }

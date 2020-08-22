@@ -22,6 +22,13 @@ class ApiFollowersGatewayImplementation: ApiFollowersGateway {
     
     // MARK: - ApiFollowersGateway
     
+    func getMyAccount(callback: @escaping (User?) -> ()) -> User? {
+        apiClient.didUserStateChange { user in
+            callback(user)
+        }
+        return apiClient.currentUser
+    }
+    
     func register(parameters: LoginParameters, completionHandler: @escaping RegisterEntityGatewayCompletionHandler) {
         apiClient.signup(email: parameters.email, password: parameters.password) { result in
             switch result {
@@ -68,29 +75,48 @@ class ApiFollowersGatewayImplementation: ApiFollowersGateway {
         }
     }
     
+    func updateTimeline(parameters: UpdateTimelineParameters, completionHandler: @escaping PostDMEntityGatewayCompletionHandler) {
+        let apiRequest = UpdateTimelineApiRequest(email: parameters.email)
+        apiClient.execute(apiRequest) { (result: Result<PostDMApiRequest.ResponseType>) in
+            switch result {
+            case .success:
+                completionHandler(.success( () ))
+            case let .failure(error):
+                completionHandler(.failure(error))
+            }
+        }
+    }
+    
     func postDM(parameters: PostDMParameters, completionHandler: @escaping PostDMEntityGatewayCompletionHandler) {
-        // virtual network API call
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
-            // passthrough to simulate API response
-            let dm = DM(message: parameters.message, isFromSelf: true)
-            completionHandler(Result.success(dm))
-        })
+        let apiRequest = PostDMApiRequest(email: parameters.email ?? "", message: parameters.message)
+        apiClient.execute(apiRequest) { (result: Result<PostDMApiRequest.ResponseType>) in
+            switch result {
+            case .success:
+                completionHandler(.success( () ))
+            case let .failure(error):
+                completionHandler(.failure(error))
+            }
+        }
     }
     
     func fetchDM(parameters: FetchDMParameters, completionHandler: @escaping FetchDMEntityGatewayCompletionHandler) {
-        // virtual network API call to get simulated messages
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
-            let result = parameters.dm.map { DM(message: "\($0.message) \($0.message)", isFromSelf: false) }
-            completionHandler(Result.success(result))
-        })
-    }
-    
-    func deleteDM(parameters: DeleteDMParameters, completionHandler: @escaping DeleteDMEntityGatewayCompletionHandler) {
-        let apiRequest = DeletePostApiRequest(email: parameters.email, uid: parameters.uid)
-        apiClient.execute(apiRequest) { (result: Result<DeletePostApiRequest.ResponseType>) in
+        let apiRequest = FetchTimelineApiRequest(email: parameters.email)
+        apiClient.execute(apiRequest) { (result: Result<FetchTimelineApiRequest.ResponseType>) in
             switch result {
             case .success:
                 completionHandler(result)
+            case let .failure(error):
+                completionHandler(.failure(error))
+            }
+        }
+    }
+    
+    func deleteDM(parameters: DeleteDMParameters, completionHandler: @escaping DeleteDMEntityGatewayCompletionHandler) {
+        let apiRequest = DeletePostApiRequest(email: parameters.email)
+        apiClient.execute(apiRequest) { (result: Result<DeletePostApiRequest.ResponseType>) in
+            switch result {
+            case .success:
+                completionHandler(.success( () ))
             case let .failure(error):
                 completionHandler(.failure(error))
             }

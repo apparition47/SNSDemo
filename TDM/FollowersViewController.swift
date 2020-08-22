@@ -16,13 +16,23 @@ final class FollowersViewController: UITableViewController {
         super.viewDidLoad()
         
         configurator.configure(followersViewController: self)
-//        presenter.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        presenter.viewDidLoad()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         presenter.router.prepare(for: segue, sender: sender)
     }
-
+    
+    // MARK: - IBAction
+    
+    @IBAction func myTimelineTapped(_ sender: Any) {
+        presenter.didSelectMyTimeline()
+    }
+    
     // MARK: - UITableViewDataSource
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -48,6 +58,7 @@ extension FollowersViewController : FollowersView {
     
     func refreshFollowersView() {
         tableView.reloadData()
+        
     }
     
     func displayFollowersRetrievalError(title: String, message: String) {

@@ -1,24 +1,25 @@
 //
-//  DeletePostApiRequest.swift
+//  FetchTimelineApiRequest.swift
 //  TDM
 //
-//  Created by Aaron Lee on 2020/08/21.
+//  Created by Aaron Lee on 2020/08/22.
 //  Copyright © 2020 Aaron Lee. All rights reserved.
 //
 
 import Foundation
 
-struct DeletePostApiRequest: ApiRequest {
-    typealias ResponseType = NullCodable
+struct FetchTimelineApiRequest: ApiRequest {
+    typealias ResponseType = [DM]
     
     var query: DocumentQuery {
-//        .post(email: email, uid: uid)
         .timelinePosts(email: email)
     }
     var method: HTTPMethod {
-        .delete
+        .get
+    }
+    var orderBy: String? {
+        "timestamp"
     }
     
     let email: String
-//    let uid: String
 }

@@ -11,11 +11,12 @@ import Foundation
 enum DocumentQuery {
     case timelines
     case timeline(email: String)
-    case post(email: String, uid: String)
+    case timelinePosts(email: String)
+//    case post(email: String, uid: String)
 }
 
 enum HTTPMethod {
-    case get, post, delete
+    case get, post, delete, put
 }
 
 extension DocumentQuery {
@@ -23,7 +24,8 @@ extension DocumentQuery {
         switch self {
         case .timelines: return "timelines"
         case .timeline(let email): return "timelines/\(email)"
-        case .post(let email, let uid): return "timelines/\(email)/\(uid)"
+        case .timelinePosts(let email): return "timelines/\(email)/posts"
+//        case .post(let email): return "timelines/\(email)/posts"
         }
     }
 }
@@ -33,10 +35,11 @@ protocol ApiRequest {
     var query: DocumentQuery { get }
     var parameters: [String: Any]? { get }
 //    var headers: [String: String]? { get }
+    var method: HTTPMethod { get }
     var orderBy: String? { get }
     var orderDesc: Bool { get }
     var limit: Int? { get }
-    associatedtype ResponseType//: Codable
+    associatedtype ResponseType: Codable
 //    static func decode(from data: Data) -> Result<ResponseType>
 }
 

@@ -186,7 +186,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Timelines" id="464-Pa-UNg">
-                        <barButtonItem key="rightBarButtonItem" title="My Timeline" id="BZ9-4S-Znt"/>
+                        <barButtonItem key="rightBarButtonItem" title="My Timeline" id="BZ9-4S-Znt">
+                            <connections>
+                                <action selector="myTimelineTapped:" destination="2t8-X9-f71" id="Lia-DV-gug"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="tAC-ME-a94" kind="show" identifier="FollowersSceneToFollowerDMSceneSegue" id="SDc-yL-Fw4"/>

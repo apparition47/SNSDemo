@@ -33,7 +33,7 @@ protocol FollowerDMPresenter {
 class FollowerDMPresenterImplementation: FollowerDMPresenter {
 
     fileprivate var inputMessage = ""
-    fileprivate let follower: Follower
+    fileprivate let follower: User
 	fileprivate weak var view: FollowerDMView?
 	fileprivate let postDMUseCase: PostDMUseCase
 	fileprivate let fetchDMUseCase: FetchDMUseCase
@@ -46,7 +46,7 @@ class FollowerDMPresenterImplementation: FollowerDMPresenter {
 	}
 	
 	init(view: FollowerDMView,
-         follower: Follower,
+         follower: User,
 	     postDMUseCase: PostDMUseCase,
 	     fetchDMUseCase: FetchDMUseCase,
 	     router: FollowerDMViewRouter) {
@@ -66,7 +66,16 @@ class FollowerDMPresenterImplementation: FollowerDMPresenter {
 	// MARK: - FollowerDMPresenter
 	
 	func viewDidLoad() {
-        view?.updateHeaderTitle("@\(follower.screen_name)")
+        view?.updateHeaderTitle(follower.email)
+        let params = FetchDMParameters(email: follower.email)
+        fetchDMUseCase.fetch(parameters: params) { [weak self] result in
+            switch result {
+            case let .success(dms):
+                dms.forEach { self?.handleDMPosted(dm: $0) }
+            
+            default: break
+            }
+        }
 	}
 	
 	func configure(cell: BubbleCellView, forRow row: Int) {
@@ -88,8 +97,9 @@ class FollowerDMPresenterImplementation: FollowerDMPresenter {
         let params = PostDMParameters(message: inputMessage)
         postDMUseCase.post(parameters: params) { result in
             switch result {
-            case let .success(dm):
-                self.handleDMPosted(dm: dm)
+            case .success:
+//                self.handleDMPosted(dm: dm)
+                break
             case let .failure(error):
                 self.handleDMPostError(error)
             }
@@ -116,19 +126,19 @@ class FollowerDMPresenterImplementation: FollowerDMPresenter {
 	}
 	
     @objc fileprivate func didReceiveFetchDMNotification(_ notification: Notification) {
-        if let fakeDm = notification.object as? DM {
-            let params = FetchDMParameters(dm: [fakeDm])
-            fetchDMUseCase.fetch(parameters: params) { result in
-                switch result {
-                case let .success(dms):
-                    if let dm = dms.first {
-                        self.handleDMPosted(dm: dm)
-                    }
-                case let .failure(error):
-                    self.handleDMPostError(error)
-                }
-            }
-        }
+//        if let fakeDm = notification.object as? DM {
+//            let params = FetchDMParameters(dm: [fakeDm])
+//            fetchDMUseCase.fetch(parameters: params) { result in
+//                switch result {
+//                case let .success(dms):
+//                    if let dm = dms.first {
+//                        self.handleDMPosted(dm: dm)
+//                    }
+//                case let .failure(error):
+//                    self.handleDMPostError(error)
+//                }
+//            }
+//        }
 	}
 	
     fileprivate func handleDMPosted(dm: DM) {

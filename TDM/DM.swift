@@ -9,12 +9,17 @@
 import Foundation
 
 struct DM: Codable {
+//    let uid: String
     let message: String
-    let isFromSelf: Bool
+//    let timestamp: Date
+    let from: String
+    
+//    let isFromSelf: Bool
+    var isFromSelf: Bool { true }
 }
 
 extension DM: Equatable { }
 
 func == (lhs: DM, rhs: DM) -> Bool {
-    return lhs.message == rhs.message && lhs.isFromSelf == rhs.isFromSelf
+    return lhs.message == rhs.message// && lhs.isFromSelf == rhs.isFromSelf
 }

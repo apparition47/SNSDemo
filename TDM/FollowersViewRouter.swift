@@ -9,7 +9,7 @@
 import UIKit
 
 protocol FollowersViewRouter: ViewRouter {
-    func presentDetailsView(for follower: Follower)
+    func presentDetailsView(for timeline: User)
 }
 
 class FollowersViewRouterImplementation: FollowersViewRouter {
@@ -19,7 +19,7 @@ class FollowersViewRouterImplementation: FollowersViewRouter {
     }
     
     fileprivate weak var followersViewController: FollowersViewController?
-    fileprivate var follower: Follower!
+    fileprivate var user: User!
     
     init(followersViewController: FollowersViewController) {
         self.followersViewController = followersViewController
@@ -27,14 +27,14 @@ class FollowersViewRouterImplementation: FollowersViewRouter {
     
     // MARK: - LoginViewRouter
     
-    func presentDetailsView(for follower: Follower) {
-        self.follower = follower
+    func presentDetailsView(for timeline: User) {
+        self.user = timeline
         followersViewController?.performSegue(withIdentifier: Segue.FollowersSceneToFollowerDMSceneSegue, sender: nil)
     }
     
     func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let followerDMViewController = segue.destination as? FollowerDMViewController {
-            followerDMViewController.configurator = FollowerDMConfiguratorImplementation(follower: follower)
+            followerDMViewController.configurator = FollowerDMConfiguratorImplementation(user: user)
         }
     }
     

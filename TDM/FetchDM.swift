@@ -11,7 +11,7 @@ import Foundation
 typealias FetchDMUseCaseCompletionHandler = (_ followers: Result<[DM]>) -> Void
 
 struct FetchDMParameters {
-    let dm: [DM] // fake passthrough
+    let email: String
 }
 
 protocol FetchDMUseCase {

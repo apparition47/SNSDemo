@@ -21,9 +21,10 @@ protocol FollowerCellView {
 protocol FollowersPresenter {
     var numberOfFollowers: Int { get }
     var router: FollowersViewRouter { get }
-//    func viewDidLoad()
+    func viewDidLoad()
     func configure(cell: FollowerTableViewCell, forRow row: Int)
     func didSelect(row: Int)
+    func didSelectMyTimeline()
 }
 
 class FollowersPresenterImplementation: FollowersPresenter {
@@ -33,10 +34,10 @@ class FollowersPresenterImplementation: FollowersPresenter {
     internal let router: FollowersViewRouter
     
     // Normally this would be file private as well, we keep it internal so we can inject values for testing purposes
-    var followers = [Follower]()
+    var timelines = [User]()
     
     var numberOfFollowers: Int {
-        return followers.count
+        timelines.count
     }
     
     init(view: FollowersView,
@@ -52,22 +53,35 @@ class FollowersPresenterImplementation: FollowersPresenter {
     
     // MARK: - FollowersPresenter
     
-//    func viewDidLoad() {
+    func viewDidLoad() {
 //        doLoginFlow()
-//    }
+        fetchFollowersUseCase.fetchFollowers { [weak self] result in
+            switch result {
+            case let .success(followers):
+                self?.handleFollowersReceived(followers)
+            case let .failure(error):
+                self?.handleFollowersError(error)
+            }
+        }
+    }
     
     func configure(cell: FollowerTableViewCell, forRow row: Int) {
-        let follower = followers[row]
-
-        cell.display(screenName: "@\(follower.screen_name)")
+        let timeline = timelines[row]
+        
+        cell.display(screenName: timeline.email)
     }
     
     func didSelect(row: Int) {
-        let follower = followers[row]
+        let follower = timelines[row]
         
         router.presentDetailsView(for: follower)
     }
 
+    func didSelectMyTimeline() {
+        if let currentUser = loginUseCase.getMyAccount(completion: { _ in }) {
+            router.presentDetailsView(for: currentUser)
+        }
+    }
     
     // MARK: - Private
     
@@ -96,12 +110,12 @@ class FollowersPresenterImplementation: FollowersPresenter {
 //        }
     }
     
-    fileprivate func handleFollowersReceived(_ followers: [Follower]) {
-        self.followers += followers
+    fileprivate func handleFollowersReceived(_ followers: [User]) {
+        self.timelines += followers
         view?.refreshFollowersView()
     }
     
     fileprivate func handleFollowersError(_ error: Error) {
-        view?.displayFollowersRetrievalError(title: "Error", message: error.localizedDescription)
+        view?.displayFollowersRetrievalError(title: "Error", message: "error.localizedDescription")
     }
 }

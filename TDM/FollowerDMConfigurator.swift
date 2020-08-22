@@ -14,10 +14,10 @@ protocol FollowerDMConfigurator {
 
 class FollowerDMConfiguratorImplementation: FollowerDMConfigurator {
     
-    let follower: Follower
+    let user: User
     
-    init(follower: Follower) {
-        self.follower = follower
+    init(user: User) {
+        self.user = user
     }
     
     func configure(followerDMViewController: FollowerDMViewController) {
@@ -32,7 +32,7 @@ class FollowerDMConfiguratorImplementation: FollowerDMConfigurator {
         let router = FollowerDMViewRouterImplementation(followerDMViewController: followerDMViewController)
         
         let presenter = FollowerDMPresenterImplementation(view: followerDMViewController,
-                                                          follower: follower,
+                                                          follower: user,
                                                          postDMUseCase: postDMUseCase,
                                                          fetchDMUseCase: fetchDMUseCase,
                                                          router: router)

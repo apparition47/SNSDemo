@@ -8,9 +8,10 @@
 
 import Foundation
 import Firebase
+import FirebaseFirestoreSwift
 
 protocol ApiClient {
-    var isLoggedIn: Bool { get }
+    var currentUser: User? { get }
     func didUserStateChange(callback: @escaping (User?) -> ())
     func signup(email: String, password: String, completion: @escaping (Result<User>) -> ())
     func login(email: String, password: String, completion: @escaping (Result<User>) -> ())
@@ -24,8 +25,11 @@ class ApiClientImplementation: ApiClient {
     
 	// MARK: - ApiClient
     
-    var isLoggedIn: Bool {
-        Auth.auth().currentUser != nil
+    var currentUser: User? {
+        guard let firUser = Auth.auth().currentUser else {
+            return nil
+        }
+        return User(email: firUser.email ?? "")
     }
     
     func didUserStateChange(callback: @escaping (User?) -> ()) {
@@ -47,8 +51,12 @@ class ApiClientImplementation: ApiClient {
     
     func login(email: String, password: String, completion: @escaping (Result<User>) -> ()) {
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-          guard let strongSelf = self else { return }
-          // ...
+                if let error = error {
+                    completion(.failure(error))
+                }
+                if let firUser = authResult?.user {
+                    completion(.success(User(email: firUser.email ?? "")))
+                }
         }
     }
     
@@ -62,9 +70,9 @@ class ApiClientImplementation: ApiClient {
     }
     
     func execute<T: ApiRequest>(_ request: T, completion: @escaping (Result<T.ResponseType>) -> ()) {
-        let docRef = db.document(request.query.description)
-        switch request.query {
-        case .timeline, .timelines:
+        
+        switch request.method {
+        case .get:
             let colRef = db.collection(request.query.description)
             var query: Query?
             if let orderBy = request.orderBy {
@@ -74,37 +82,70 @@ class ApiClientImplementation: ApiClient {
                 query = colRef.limit(to: limit)
             }
             (query ?? colRef).getDocuments { (querySnapshot, err) in
-                if let payload = querySnapshot?.documents as? T.ResponseType {
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        print("\(document.documentID) => \(document.data())")
+                    }
+                }
+                
+                if let payload = try! querySnapshot?.data(as: T.ResponseType.self) {
                     completion(.success(payload))
                 } else {
                     completion(.failure(NSError()))
                 }
             }
-        case .post:
+        case .put:
             guard let parameters = request.parameters else {
                 completion(Result.failure(NSError()))
                 return
             }
-            switch request.method {
-            case .post:
-                docRef.setData(parameters) { err in
-                    if let err = err {
-                        print("Error writing document: \(err)")
-                    } else {
-                        print("Document successfully written!")
-                    }
+            db.document(request.query.description).setData(parameters) { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                } else {
+                    print("Document successfully written!")
+                    completion(.success(NullCodable() as! T.ResponseType))
                 }
-            case .delete:
-                docRef.delete { err in
-                    if let err = err {
-                        print("Error writing document: \(err)")
-                    } else {
-                        print("Document successfully written!")
-                    }
+            }
+        case .post:
+            guard var parameters = request.parameters else {
+                completion(Result.failure(NSError()))
+                return
+            }
+            parameters["timestamp"] = Timestamp(date: Date())
+            db.collection(request.query.description).addDocument(data: parameters) { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                } else {
+                    print("Document successfully written!")
+                    completion(.success(NullCodable() as! T.ResponseType))
                 }
-            default: break
+            }
+        case .delete:
+            db.document(request.query.description).delete { err in
+                if let err = err {
+                    print("Error writing document: \(err)")
+                } else {
+                    print("Document successfully written!")
+                }
+                completion(.success(NullCodable() as! T.ResponseType))
             }
         }
     }
 
+}
+
+extension QuerySnapshot {
+    public func data<T: Decodable>(as type: T.Type,
+                                   decoder: Firestore.Decoder? = nil) throws -> T? {
+        let dic: [[String : Any]]? = documents.compactMap { doc in
+            var res = doc.data()
+            res.removeValue(forKey: "timestamp")
+            return res
+        }
+        let jsonData = try? JSONSerialization.data(withJSONObject: dic as Any, options: [])
+        return try! JSONDecoder().decode(T.self, from: jsonData!)
+    }
 }

@@ -10,6 +10,7 @@ import Foundation
 
 class CacheFollowersGateway: FollowersGateway {
 
+
     let apiFollowersGateway: ApiFollowersGateway
 
     init(apiFollowersGateway: ApiFollowersGateway) {
@@ -18,8 +19,12 @@ class CacheFollowersGateway: FollowersGateway {
     
     // MARK: - FollowersGateway
 
+    func getMyAccount(callback: @escaping (User?) -> ()) -> User? {
+        return apiFollowersGateway.getMyAccount(callback: callback)
+    }
+    
     func register(parameters: LoginParameters, completionHandler: @escaping LoginEntityGatewayCompletionHandler) {
-        apiFollowersGateway.login(parameters: parameters) { result in
+        apiFollowersGateway.register(parameters: parameters) { result in
             self.handleLoginApiResult(result, parameters: parameters, completionHandler: completionHandler)
         }
     }
@@ -43,10 +48,17 @@ class CacheFollowersGateway: FollowersGateway {
         }
     }
     
+    func updateTimeline(parameters: UpdateTimelineParameters, completionHandler: @escaping UpdateTimelineUseCaseCompletionHandler) {
+        // TODO write to CoreData
+        apiFollowersGateway.updateTimeline(parameters: parameters) { result in
+            self.handlePostDMApiResult(result, completionHandler: completionHandler)
+        }
+    }
+    
     func postDM(parameters: PostDMParameters, completionHandler: @escaping PostDMEntityGatewayCompletionHandler) {
         // TODO write to CoreData
         apiFollowersGateway.postDM(parameters: parameters) { result in
-            self.handlePostDMApiResult(result, parameters: parameters, completionHandler: completionHandler)
+            self.handlePostDMApiResult(result, completionHandler: completionHandler)
         }
     }
     
@@ -93,10 +105,10 @@ class CacheFollowersGateway: FollowersGateway {
         }
     }
     
-    fileprivate func handlePostDMApiResult(_ result: Result<DM>, parameters: PostDMParameters, completionHandler: PostDMEntityGatewayCompletionHandler) {
+    fileprivate func handlePostDMApiResult(_ result: Result<Void>, completionHandler: PostDMEntityGatewayCompletionHandler) {
         switch result {
-        case let .success(dm):
-            completionHandler(.success(dm))
+        case .success:
+            completionHandler(result)
         case .failure(_):
             completionHandler(result)
         }
