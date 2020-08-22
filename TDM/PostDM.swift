@@ -17,8 +17,8 @@ struct PostDMUseCaseNotifications {
 
 struct PostDMParameters {
     let message: String
-    var email: String? = nil
-    let uid: String = UUID().uuidString
+    let timelineEmail: String
+    let fromEmail: String
 }
 
 protocol PostDMUseCase {
@@ -36,10 +36,7 @@ class PostDMUseCaseImplementation: PostDMUseCase {
     // MARK: - PostDMUseCase
     
     func post(parameters: PostDMParameters, completionHandler: @escaping PostDMUseCaseCompletionHandler) {
-        guard let user = followersGateway.getMyAccount(callback: { user in }) else { return }
-        var params = parameters
-        params.email = user.email
-        followersGateway.postDM(parameters: params) { result in
+        followersGateway.postDM(parameters: parameters) { result in
             switch result {
             case let .success(dm):
                 completionHandler(result)

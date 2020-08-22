@@ -89,12 +89,12 @@ class FollowerDMPresenterImplementation: FollowerDMPresenter {
             return
         }
         
-        guard loginUseCase.getMyAccount(completion: { _ in }) != nil else {
+        guard let myUser = loginUseCase.getMyAccount(completion: { _ in }) else {
             view?.displayDMPostError(title: "Error", message: "Please login first")
             return
         }
         
-        let params = PostDMParameters(message: inputMessage)
+        let params = PostDMParameters(message: inputMessage.trimmingCharacters(in: .whitespacesAndNewlines), timelineEmail: follower.email, fromEmail: myUser.email)
         postDMUseCase.post(parameters: params) { [weak self] result in
             switch result {
             case .success:
@@ -112,16 +112,16 @@ class FollowerDMPresenterImplementation: FollowerDMPresenter {
     
     func deletePost(row: Int) {
         let post = followerDMs[row]
-        
-        deleteDMUseCase.delete(parameters: DeleteDMParameters(email: post.from, uid: post.uid)) { [weak self] result in
+        let params = DeleteDMParameters(timelineEmail: follower.email, fromEmail: post.from, uid: post.uid)
+        deleteDMUseCase.delete(parameters: params) { [weak self] result in
             switch result {
             case .success:
+                self?.followerDMs.remove(at: row)
                 self?.view?.removePostCell(row: row)
             case let .failure(error):
                 self?.handleDMPostError(error)
             }
         }
-        followerDMs.remove(at: row)
     }
 	
 	// MARK: - Private

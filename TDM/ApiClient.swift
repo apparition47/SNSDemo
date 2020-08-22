@@ -63,12 +63,15 @@ class ApiClientImplementation: ApiClient {
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
+            completion(.success( () ))
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
+            completion(.failure(signOutError))
         }
     }
     
     func execute<T: ApiRequest>(_ request: T, completion: @escaping (Result<T.ResponseType>) -> ()) {
+        print(request.query.description)
         
         switch request.method {
         case .get:
@@ -83,6 +86,7 @@ class ApiClientImplementation: ApiClient {
             (query ?? colRef).getDocuments { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting documents: \(err)")
+                    completion(.failure(err))
                 } else {
                     for document in querySnapshot!.documents {
                         print("\(document.documentID) => \(document.data())")
@@ -104,6 +108,7 @@ class ApiClientImplementation: ApiClient {
             db.document(request.query.description).setData(parameters) { err in
                 if let err = err {
                     print("Error writing document: \(err)")
+                    completion(.failure(err))
                 } else {
                     print("Document successfully written!")
                     completion(.success(NullCodable() as! T.ResponseType))
@@ -118,6 +123,7 @@ class ApiClientImplementation: ApiClient {
             db.collection(request.query.description).addDocument(data: parameters) { err in
                 if let err = err {
                     print("Error writing document: \(err)")
+                    completion(.failure(err))
                 } else {
                     print("Document successfully written!")
                     completion(.success(NullCodable() as! T.ResponseType))
@@ -127,10 +133,12 @@ class ApiClientImplementation: ApiClient {
             db.document(request.query.description).delete { err in
                 if let err = err {
                     print("Error writing document: \(err)")
+                    completion(.failure(err))
                 } else {
                     print("Document successfully written!")
+                    completion(.success(NullCodable() as! T.ResponseType))
                 }
-                completion(.success(NullCodable() as! T.ResponseType))
+                
             }
         }
     }

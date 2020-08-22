@@ -11,7 +11,8 @@ import Foundation
 typealias DeleteDMUseCaseCompletionHandler = (_ followers: Result<Void>) -> Void
 
 struct DeleteDMParameters {
-    let email: String
+    let timelineEmail: String
+    let fromEmail: String
     let uid: String
 }
 
@@ -30,8 +31,8 @@ class DeleteDMUseCaseImplementation: DeleteDMUseCase {
     // MARK: - DeleteDMUseCase
     
     func delete(parameters: DeleteDMParameters, completionHandler: @escaping DeleteDMUseCaseCompletionHandler) {
-        guard let user = self.followersGateway.getMyAccount(callback: { _ in }), user.email == parameters.email else {
-            completionHandler(.failure(NSError(domain: "", code: 999, userInfo: [NSLocalizedDescriptionKey: "Can't delete your own post"])))
+        guard let me = self.followersGateway.getMyAccount(callback: { _ in }), me.email == parameters.fromEmail else {
+            completionHandler(.failure(NSError(domain: "", code: 999, userInfo: [NSLocalizedDescriptionKey: "Can't delete others' posts"])))
             return
         }
         

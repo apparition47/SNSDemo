@@ -12,7 +12,7 @@ struct DM: Codable {
     let uid: String
     let message: String
 //    let timestamp: Date
-    let from: String
+    let from: String // email
     
 //    let isFromSelf: Bool
     var isFromSelf: Bool { true }

@@ -88,7 +88,7 @@ class ApiFollowersGatewayImplementation: ApiFollowersGateway {
     }
     
     func postDM(parameters: PostDMParameters, completionHandler: @escaping PostDMEntityGatewayCompletionHandler) {
-        let apiRequest = PostDMApiRequest(email: parameters.email ?? "", uid: UUID().uuidString, message: parameters.message)
+        let apiRequest = PostDMApiRequest(timelineEmail: parameters.timelineEmail, fromEmail: parameters.fromEmail, message: parameters.message)
         apiClient.execute(apiRequest) { (result: Result<PostDMApiRequest.ResponseType>) in
             switch result {
             case .success:
@@ -112,7 +112,7 @@ class ApiFollowersGatewayImplementation: ApiFollowersGateway {
     }
     
     func deleteDM(parameters: DeleteDMParameters, completionHandler: @escaping DeleteDMEntityGatewayCompletionHandler) {
-        let apiRequest = DeletePostApiRequest(email: parameters.email, uid: parameters.uid)
+        let apiRequest = DeletePostApiRequest(timelineEmail: parameters.timelineEmail, uid: parameters.uid)
         apiClient.execute(apiRequest) { (result: Result<DeletePostApiRequest.ResponseType>) in
             switch result {
             case .success:

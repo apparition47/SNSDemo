@@ -12,7 +12,7 @@ struct PostDMApiRequest: ApiRequest {
     typealias ResponseType = NullCodable
     
     var query: DocumentQuery {
-        .post(email: email, uid: uid)
+        .post(email: timelineEmail, uid: uid)
     }
     
     var method: HTTPMethod {
@@ -20,10 +20,11 @@ struct PostDMApiRequest: ApiRequest {
     }
     
     var parameters: [String : Any]? {
-        ["uid": uid, "message": message, "from": email]
+        ["uid": uid, "message": message, "from": fromEmail]
     }
     
-    let email: String
-    let uid: String
+    let timelineEmail: String
+    let fromEmail: String
+    let uid: String = UUID().uuidString
     let message: String
 }
