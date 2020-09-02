@@ -13,10 +13,13 @@ A SNS demo based on Firebase.
 ## Setup
 
 ```bash
-$ git clone https://github.com/apparition47/SNSDemo.git
-$ cd SNSDemo
-
-$ OPENSSL_KEY=ENTER_PASSWORD_HEREEEEEEEEEEEE
-
-$ openssl aes-256-cbc -d -md sha256 -in TDM/GoogleService-Info.plist.enc -out TDM/GoogleService-Info.plist -k ${OPENSSL_KEY}
+################################
+# input pw into env var here
+OPENSSL_KEY=ENTER_PASSWORD_HERE
+################################
+git clone https://github.com/apparition47/SNSDemo.git
+cd SNSDemo
+openssl aes-256-cbc -d -md sha256 -in TDM/GoogleService-Info.plist.enc -out TDM/GoogleService-Info.plist -k ${OPENSSL_KEY}
+pod install
+open TDM.xcworkspace
 ```

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03E679EFEB8A7609D6317E43 /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B56266F1DA040F497EE5C14 /* Pods_Tests.framework */; };
 		2F3D6B801E61A37400CF7881 /* UIViewController-Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3D6B7F1E61A37400CF7881 /* UIViewController-Alert.swift */; };
 		2F3D6B861E61D0AC00CF7881 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3D6B851E61D0AC00CF7881 /* ApiClient.swift */; };
 		2FC6C46F1E60B542005539F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6C46E1E60B542005539F5 /* AppDelegate.swift */; };
@@ -15,11 +16,24 @@
 		2FC6C4981E60B5C4005539F5 /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6C4961E60B5C4005539F5 /* ViewRouter.swift */; };
 		2FC6C4A31E60B65E005539F5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC6C4A21E60B65E005539F5 /* Result.swift */; };
 		59CA5CD36273E6AC1AA01F8F /* Pods_TDM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 843BBDBFB8FDBB73B7931341 /* Pods_TDM.framework */; };
+		73177ABC24FF2E69007F401B /* FetchDMCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73177AA624FF2E68007F401B /* FetchDMCaseTest.swift */; };
+		73177ABD24FF2E69007F401B /* FollowerDMViewRouterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73177AA924FF2E68007F401B /* FollowerDMViewRouterSpy.swift */; };
+		73177ABE24FF2E69007F401B /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73177AAA24FF2E68007F401B /* Helpers.swift */; };
+		73177ABF24FF2E69007F401B /* FollowerDMPresenterStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73177AAC24FF2E68007F401B /* FollowerDMPresenterStub.swift */; };
+		73177AC024FF2E69007F401B /* ApiFollowersGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73177AAE24FF2E68007F401B /* ApiFollowersGateway.swift */; };
+		73177AC124FF2E69007F401B /* FollowersGatewaySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73177AAF24FF2E68007F401B /* FollowersGatewaySpy.swift */; };
+		73177AC324FF2E69007F401B /* FollowerDMViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73177AB224FF2E68007F401B /* FollowerDMViewSpy.swift */; };
+		73177AC424FF2E69007F401B /* BubbleCellViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73177AB324FF2E68007F401B /* BubbleCellViewSpy.swift */; };
+		73177AC524FF2E69007F401B /* FetchDMUseCaseSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73177AB524FF2E68007F401B /* FetchDMUseCaseSpy.swift */; };
+		73177AC724FF2E69007F401B /* ApiFollowersGatewayTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73177AB824FF2E68007F401B /* ApiFollowersGatewayTest.swift */; };
+		73177AC924FF2E69007F401B /* FollowerDMPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73177ABB24FF2E69007F401B /* FollowerDMPresenterTest.swift */; };
 		73185C701FD6F50E00D233CB /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73185C6F1FD6F50E00D233CB /* SafariServices.framework */; };
 		7333A3EC1F5AD45F00996C84 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7333A3EB1F5AD45F00996C84 /* ApiRequest.swift */; };
+		733BDBCD24FF389500AE13B8 /* LoginUseCaseSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733BDBCC24FF389500AE13B8 /* LoginUseCaseSpy.swift */; };
+		733BDBCF24FF389E00AE13B8 /* DeleteDMUseCaseSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733BDBCE24FF389E00AE13B8 /* DeleteDMUseCaseSpy.swift */; };
+		733BDBD124FF38AA00AE13B8 /* PostDMUseCaseSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733BDBD024FF38AA00AE13B8 /* PostDMUseCaseSpy.swift */; };
 		734AF5E61FAEEC4F00C7099B /* FollowersConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734AF5E51FAEEC4F00C7099B /* FollowersConfigurator.swift */; };
-		734BA0FF1F5C03A00006B3D4 /* CacheProjectsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734BA0FE1F5C03A00006B3D4 /* CacheProjectsGateway.swift */; };
-		73880E0B1F8670FA005E24FB /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73880E0A1F8670FA005E24FB /* Tests.swift */; };
+		734BA0FF1F5C03A00006B3D4 /* CacheFollowersGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734BA0FE1F5C03A00006B3D4 /* CacheFollowersGateway.swift */; };
 		738A0F4A1FD80D5600B79813 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A0F491FD80D5600B79813 /* Login.swift */; };
 		738A0F4C1FD80D8F00B79813 /* PostDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A0F4B1FD80D8F00B79813 /* PostDM.swift */; };
 		738A0F4E1FD81B7300B79813 /* FetchFollowers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738A0F4D1FD81B7300B79813 /* FetchFollowers.swift */; };
@@ -74,13 +88,27 @@
 		2FC6C47D1E60B542005539F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FC6C4961E60B5C4005539F5 /* ViewRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		2FC6C4A21E60B65E005539F5 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		510D7FAB7D3DDB3FC788049D /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
+		73177AA624FF2E68007F401B /* FetchDMCaseTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchDMCaseTest.swift; sourceTree = "<group>"; };
+		73177AA924FF2E68007F401B /* FollowerDMViewRouterSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerDMViewRouterSpy.swift; sourceTree = "<group>"; };
+		73177AAA24FF2E68007F401B /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		73177AAC24FF2E68007F401B /* FollowerDMPresenterStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerDMPresenterStub.swift; sourceTree = "<group>"; };
+		73177AAE24FF2E68007F401B /* ApiFollowersGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiFollowersGateway.swift; sourceTree = "<group>"; };
+		73177AAF24FF2E68007F401B /* FollowersGatewaySpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowersGatewaySpy.swift; sourceTree = "<group>"; };
+		73177AB224FF2E68007F401B /* FollowerDMViewSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerDMViewSpy.swift; sourceTree = "<group>"; };
+		73177AB324FF2E68007F401B /* BubbleCellViewSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleCellViewSpy.swift; sourceTree = "<group>"; };
+		73177AB524FF2E68007F401B /* FetchDMUseCaseSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchDMUseCaseSpy.swift; sourceTree = "<group>"; };
+		73177AB824FF2E68007F401B /* ApiFollowersGatewayTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiFollowersGatewayTest.swift; sourceTree = "<group>"; };
+		73177ABB24FF2E69007F401B /* FollowerDMPresenterTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowerDMPresenterTest.swift; sourceTree = "<group>"; };
 		73185C631FD6F3F200D233CB /* TDM-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TDM-Bridging-Header.h"; sourceTree = "<group>"; };
 		73185C6F1FD6F50E00D233CB /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		7333A3EB1F5AD45F00996C84 /* ApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
+		733BDBCC24FF389500AE13B8 /* LoginUseCaseSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseSpy.swift; sourceTree = "<group>"; };
+		733BDBCE24FF389E00AE13B8 /* DeleteDMUseCaseSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteDMUseCaseSpy.swift; sourceTree = "<group>"; };
+		733BDBD024FF38AA00AE13B8 /* PostDMUseCaseSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDMUseCaseSpy.swift; sourceTree = "<group>"; };
 		734AF5E51FAEEC4F00C7099B /* FollowersConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowersConfigurator.swift; sourceTree = "<group>"; };
-		734BA0FE1F5C03A00006B3D4 /* CacheProjectsGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheProjectsGateway.swift; sourceTree = "<group>"; };
+		734BA0FE1F5C03A00006B3D4 /* CacheFollowersGateway.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CacheFollowersGateway.swift; sourceTree = "<group>"; };
 		73880E081F8670FA005E24FB /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		73880E0A1F8670FA005E24FB /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		73880E0C1F8670FA005E24FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		738A0F491FD80D5600B79813 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		738A0F4B1FD80D8F00B79813 /* PostDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDM.swift; sourceTree = "<group>"; };
@@ -114,6 +142,8 @@
 		73E235A124F0C86F00F9AC08 /* FetchTimelineApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTimelineApiRequest.swift; sourceTree = "<group>"; };
 		73E235A324F0C95100F9AC08 /* PostDMApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDMApiRequest.swift; sourceTree = "<group>"; };
 		843BBDBFB8FDBB73B7931341 /* Pods_TDM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TDM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B56266F1DA040F497EE5C14 /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B567867A1B66AF1B2958C587 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E2D3A62ADC751F0119D27C7F /* Pods-TDM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TDM.debug.xcconfig"; path = "Target Support Files/Pods-TDM/Pods-TDM.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03E679EFEB8A7609D6317E43 /* Pods_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +173,8 @@
 			children = (
 				E2D3A62ADC751F0119D27C7F /* Pods-TDM.debug.xcconfig */,
 				130F8BF7ED68E22502D7F0C3 /* Pods-TDM.release.xcconfig */,
+				B567867A1B66AF1B2958C587 /* Pods-Tests.debug.xcconfig */,
+				510D7FAB7D3DDB3FC788049D /* Pods-Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -227,7 +260,7 @@
 		2FC6C4991E60B5EA005539F5 /* Cache */ = {
 			isa = PBXGroup;
 			children = (
-				734BA0FE1F5C03A00006B3D4 /* CacheProjectsGateway.swift */,
+				734BA0FE1F5C03A00006B3D4 /* CacheFollowersGateway.swift */,
 			);
 			name = Cache;
 			sourceTree = "<group>";
@@ -302,6 +335,88 @@
 			name = Requests;
 			sourceTree = "<group>";
 		};
+		73177AA524FF2E68007F401B /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				73177AA624FF2E68007F401B /* FetchDMCaseTest.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		73177AA724FF2E68007F401B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				73177AA824FF2E68007F401B /* Routers */,
+				73177AAA24FF2E68007F401B /* Helpers.swift */,
+				73177AAB24FF2E68007F401B /* Presenters */,
+				73177AAD24FF2E68007F401B /* Gateways */,
+				73177AB124FF2E68007F401B /* Views */,
+				73177AB424FF2E68007F401B /* UseCases */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		73177AA824FF2E68007F401B /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				73177AA924FF2E68007F401B /* FollowerDMViewRouterSpy.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		73177AAB24FF2E68007F401B /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				73177AAC24FF2E68007F401B /* FollowerDMPresenterStub.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		73177AAD24FF2E68007F401B /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+				73177AAE24FF2E68007F401B /* ApiFollowersGateway.swift */,
+				73177AAF24FF2E68007F401B /* FollowersGatewaySpy.swift */,
+			);
+			path = Gateways;
+			sourceTree = "<group>";
+		};
+		73177AB124FF2E68007F401B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				73177AB224FF2E68007F401B /* FollowerDMViewSpy.swift */,
+				73177AB324FF2E68007F401B /* BubbleCellViewSpy.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		73177AB424FF2E68007F401B /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				733BDBCE24FF389E00AE13B8 /* DeleteDMUseCaseSpy.swift */,
+				73177AB524FF2E68007F401B /* FetchDMUseCaseSpy.swift */,
+				733BDBCC24FF389500AE13B8 /* LoginUseCaseSpy.swift */,
+				733BDBD024FF38AA00AE13B8 /* PostDMUseCaseSpy.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		73177AB724FF2E68007F401B /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+				73177AB824FF2E68007F401B /* ApiFollowersGatewayTest.swift */,
+			);
+			path = Gateways;
+			sourceTree = "<group>";
+		};
+		73177ABA24FF2E69007F401B /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				73177ABB24FF2E69007F401B /* FollowerDMPresenterTest.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
 		734DB4B41F51BF7300905F64 /* Timelines */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,8 +444,11 @@
 		73880E091F8670FA005E24FB /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				73880E0A1F8670FA005E24FB /* Tests.swift */,
+				73177AB724FF2E68007F401B /* Gateways */,
+				73177AA724FF2E68007F401B /* Helpers */,
 				73880E0C1F8670FA005E24FB /* Info.plist */,
+				73177ABA24FF2E69007F401B /* Presenters */,
+				73177AA524FF2E68007F401B /* UseCases */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -358,6 +476,7 @@
 			children = (
 				73185C6F1FD6F50E00D233CB /* SafariServices.framework */,
 				843BBDBFB8FDBB73B7931341 /* Pods_TDM.framework */,
+				8B56266F1DA040F497EE5C14 /* Pods_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -388,9 +507,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73880E111F8670FA005E24FB /* Build configuration list for PBXNativeTarget "Tests" */;
 			buildPhases = (
+				4A4BB5E4554772A88A53F2A4 /* [CP] Check Pods Manifest.lock */,
 				73880E041F8670FA005E24FB /* Sources */,
 				73880E051F8670FA005E24FB /* Frameworks */,
 				73880E061F8670FA005E24FB /* Resources */,
+				3EEF57BAD2FBD5DD17B058D7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -464,6 +585,62 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3EEF57BAD2FBD5DD17B058D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tests/Pods-Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/abseil/absl.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/absl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tests/Pods-Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4A4BB5E4554772A88A53F2A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		599F6800DD1C45EEC690C2CC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -561,7 +738,7 @@
 				738EDE2A1FD97D530023059E /* BubbleTableViewCell.swift in Sources */,
 				73D0006C24F0FDF4009C747E /* AccountConfigurator.swift in Sources */,
 				73D6429624EFAAC0005E1602 /* AccountViewController.swift in Sources */,
-				734BA0FF1F5C03A00006B3D4 /* CacheProjectsGateway.swift in Sources */,
+				734BA0FF1F5C03A00006B3D4 /* CacheFollowersGateway.swift in Sources */,
 				734AF5E61FAEEC4F00C7099B /* FollowersConfigurator.swift in Sources */,
 				738EDE2C1FD97D530023059E /* FollowerDMPresenter.swift in Sources */,
 				73D0007624F144FD009C747E /* UpdateTimeline.swift in Sources */,
@@ -572,7 +749,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73880E0B1F8670FA005E24FB /* Tests.swift in Sources */,
+				73177ABC24FF2E69007F401B /* FetchDMCaseTest.swift in Sources */,
+				73177AC524FF2E69007F401B /* FetchDMUseCaseSpy.swift in Sources */,
+				73177AC024FF2E69007F401B /* ApiFollowersGateway.swift in Sources */,
+				73177AC324FF2E69007F401B /* FollowerDMViewSpy.swift in Sources */,
+				73177AC424FF2E69007F401B /* BubbleCellViewSpy.swift in Sources */,
+				73177AC924FF2E69007F401B /* FollowerDMPresenterTest.swift in Sources */,
+				73177AC124FF2E69007F401B /* FollowersGatewaySpy.swift in Sources */,
+				73177ABF24FF2E69007F401B /* FollowerDMPresenterStub.swift in Sources */,
+				73177ABD24FF2E69007F401B /* FollowerDMViewRouterSpy.swift in Sources */,
+				73177AC724FF2E69007F401B /* ApiFollowersGatewayTest.swift in Sources */,
+				733BDBD124FF38AA00AE13B8 /* PostDMUseCaseSpy.swift in Sources */,
+				73177ABE24FF2E69007F401B /* Helpers.swift in Sources */,
+				733BDBCF24FF389E00AE13B8 /* DeleteDMUseCaseSpy.swift in Sources */,
+				733BDBCD24FF389500AE13B8 /* LoginUseCaseSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -750,6 +940,7 @@
 		};
 		73880E0F1F8670FA005E24FB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B567867A1B66AF1B2958C587 /* Pods-Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -765,12 +956,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TDM.app/TDM";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SNS Demo.app/SNS Demo";
 			};
 			name = Debug;
 		};
 		73880E101F8670FA005E24FB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 510D7FAB7D3DDB3FC788049D /* Pods-Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -786,7 +978,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TDM.app/TDM";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SNS Demo.app/SNS Demo";
 			};
 			name = Release;
 		};
