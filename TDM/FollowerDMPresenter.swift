@@ -34,7 +34,7 @@ protocol FollowerDMPresenter {
 
 class FollowerDMPresenterImplementation: FollowerDMPresenter {
 
-    fileprivate var inputMessage = ""
+    var inputMessage = ""
     fileprivate let follower: User
 	fileprivate weak var view: FollowerDMView?
     private let loginUseCase: LoginUseCase

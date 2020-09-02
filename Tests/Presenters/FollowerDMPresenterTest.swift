@@ -30,4 +30,26 @@ class FollowerDMPresenterTest: XCTestCase {
 
     // MARK: - Tests
 
+    func testPostButtonSuccessCase() {
+        // logged in user
+        loginDMUseCaseSpy.getAccountResultToBeReturned = User(email: "loggedin@example.com")
+        fetchDMUseCaseSpy.resultToBeReturned = .success([DM]())
+        postDMUseCaseSpy.resultToBeReturned = .success(())
+        
+        presenter.inputMessage = "Hello world"
+        presenter.postButtonPressed()
+        XCTAssertTrue(viewSpy.clearInputCalled, "clearInput was not called")
+    }
+    
+    func testPostButtonAnonFailureCase() {
+        loginDMUseCaseSpy.getAccountResultToBeReturned = nil
+        fetchDMUseCaseSpy.resultToBeReturned = .success([DM]())
+        postDMUseCaseSpy.resultToBeReturned = .failure(CoreError(message: "not logged in"))
+        
+        presenter.inputMessage = "Hello world"
+        presenter.postButtonPressed()
+        viewSpy.displayDMPostError(title: "Error", message: "Failed")
+        XCTAssertEqual(viewSpy.displayErrorTitle, "Error")
+        XCTAssertEqual(viewSpy.displayErrorMessage, "Failed")
+    }
 }
