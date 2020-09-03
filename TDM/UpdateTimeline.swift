@@ -32,7 +32,7 @@ class UpdateTimelineUseCaseImplementation: UpdateTimelineUseCase {
     func updateTimeline(parameters: UpdateTimelineParameters, completionHandler: @escaping UpdateTimelineUseCaseCompletionHandler) {
         followersGateway.updateTimeline(parameters: parameters) { result in
             switch result {
-            case let .success(dm):
+            case .success(_):
                 completionHandler(result)
             case .failure(_):
                 completionHandler(result)

@@ -38,7 +38,7 @@ class PostDMUseCaseImplementation: PostDMUseCase {
     func post(parameters: PostDMParameters, completionHandler: @escaping PostDMUseCaseCompletionHandler) {
         followersGateway.postDM(parameters: parameters) { result in
             switch result {
-            case let .success(dm):
+            case .success(_):
                 completionHandler(result)
             case .failure(_):
                 completionHandler(result)
