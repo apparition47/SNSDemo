@@ -10,9 +10,11 @@
 
 class DeleteDMUseCaseSpy: DeleteDMUseCase {
     
+    var dmToDelete: DM?
     var resultToBeReturned: Result<Void>!
     
     func delete(parameters: DeleteDMParameters, completionHandler: @escaping DeleteDMUseCaseCompletionHandler) {
+        dmToDelete = DM(uid: parameters.uid, message: "", from: "")
         completionHandler(resultToBeReturned)
     }
 }

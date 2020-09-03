@@ -14,8 +14,13 @@ struct DM: Codable {
 //    let timestamp: Date
     let from: String // email
     
-//    let isFromSelf: Bool
     var isFromSelf: Bool { true }
+}
+
+extension DM: CustomStringConvertible {
+    var description: String {
+        "[\(uid)] \(from): \(message)"
+    }
 }
 
 extension DM: Equatable { }

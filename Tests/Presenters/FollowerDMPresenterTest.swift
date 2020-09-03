@@ -52,4 +52,18 @@ class FollowerDMPresenterTest: XCTestCase {
         XCTAssertEqual(viewSpy.displayErrorTitle, "Error")
         XCTAssertEqual(viewSpy.displayErrorMessage, "Failed")
     }
+    
+    func testDeleteDM() {
+        let rowToDelete = 0
+        let posts = [DM(uid: "", message: "", from: "")]
+        let targetPost = posts[rowToDelete]
+        presenter.followerDMs = posts
+        
+        deleteDMUseCaseSpy.resultToBeReturned = .success(())
+        presenter.deletePost(row: rowToDelete)
+        
+        XCTAssertEqual(targetPost, deleteDMUseCaseSpy.dmToDelete, "Deleted post at wrong index")
+        XCTAssertEqual(rowToDelete, viewSpy.removedPostRow, "Delete in view doesn't match")
+        XCTAssertFalse(presenter.followerDMs.contains(targetPost), "Post wasn't deleted")
+    }
 }

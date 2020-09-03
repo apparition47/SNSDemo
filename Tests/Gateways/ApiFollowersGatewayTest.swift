@@ -20,8 +20,8 @@ class ApiFollowersGatewayTest: XCTestCase {
     
     // MARK: - Tests
     
-    func testListCacheGetSuccess() {
-        let listToReturn = [DM]() // TODO use JSON stub insetad
+    func testFetchDMSuccess() {
+        let listToReturn = [DM(uid: "", message: "", from: "")] // TODO use JSON stub insetad
         let expectedResultToReturn: Result<[DM]> = .success(listToReturn)
         
         apiGatewaySpy.fetchDMResultToBeReturned = expectedResultToReturn
@@ -37,7 +37,7 @@ class ApiFollowersGatewayTest: XCTestCase {
         waitForExpectations(timeout: 1, handler: nil)
     }
     
-    func testListCacheGetFailure() {
+    func testFetchDMFailure() {
         let expectedResultToReturn: Result<[DM]> = .failure(CoreError(message: "Error occurred"))
         
         apiGatewaySpy.fetchDMResultToBeReturned = expectedResultToReturn
