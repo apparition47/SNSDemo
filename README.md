@@ -1,6 +1,6 @@
 # SNS Demo
 
-A SNS demo based on Firebase.
+A SNS POC based on Firebase. Written in Swift for iOS.
 
 ## Features
 
@@ -23,3 +23,5 @@ openssl aes-256-cbc -d -md sha256 -in TDM/GoogleService-Info.plist.enc -out TDM/
 pod install
 open TDM.xcworkspace
 ```
+
+<p align="center"><img height="320" src="https://user-images.githubusercontent.com/47551890/92100669-0d1ec400-ee17-11ea-9cf9-b56f2b1d2698.png"></p>
